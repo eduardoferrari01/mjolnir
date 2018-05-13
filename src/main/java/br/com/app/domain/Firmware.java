@@ -1,13 +1,5 @@
 package br.com.app.domain;
 
-import java.time.LocalDate;
-
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
-import br.com.app.domain.date.LocalDateDeserializer;
-import br.com.app.domain.date.LocalDateSerializer;
-
 public class Firmware {
 
 	private String manufacturer;
@@ -18,9 +10,8 @@ public class Firmware {
 
 	private String version;
 
-	@JsonDeserialize(using = LocalDateDeserializer.class)  
-	@JsonSerialize(using = LocalDateSerializer.class)  
-	private LocalDate releaseDate;
+	 
+/*	private String releaseDate;*/
 
 	public String getManufacturer() {
 		return manufacturer;
@@ -54,14 +45,13 @@ public class Firmware {
 		this.version = version;
 	}
 
-	public LocalDate getReleaseDate() {
-		return releaseDate;
-	}
+	/*
+	 * public String getReleaseDate() { return releaseDate; }
+	 * 
+	 * public void setReleaseDate(String releaseDate) { this.releaseDate =
+	 * releaseDate; }
+	 */
+	
+ 
 
-	public void setReleaseDate(LocalDate releaseDate) {
-		this.releaseDate = releaseDate;
-	}
-	
-	
-	
 }

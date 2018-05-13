@@ -1,7 +1,7 @@
 package br.com.app.domain;
 
 
-public class OSProcess {
+public class Process {
 
 	 private String name = "";
 	    private String path = "";

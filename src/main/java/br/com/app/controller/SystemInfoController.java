@@ -20,17 +20,11 @@ public class SystemInfoController {
 	@Autowired
 	private SystemInfoRepository systemInfoRepository;
 	
-//	@PostMapping
-//	public ResponseEntity<SystemInfo> salvar(@RequestBody SystemInfo systemInfo,UriComponentsBuilder ucBuilder)
-//	{
-//			systemInfoRepository.save(systemInfo);
-//		return new ResponseEntity<SystemInfo>(HttpStatus.CREATED);
-//	}
-	
+// 
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public SystemInfo salvar(@RequestBody SystemInfo systemInfo,UriComponentsBuilder ucBuilder)
+	public void salvar(@RequestBody SystemInfo systemInfo)
 	{
 			systemInfoRepository.save(systemInfo);
-		    return systemInfo;
+		   
 	}
 }

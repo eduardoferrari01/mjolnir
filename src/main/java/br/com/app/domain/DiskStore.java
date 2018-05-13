@@ -2,10 +2,10 @@ package br.com.app.domain;
 
 import java.util.List;
 
-public class HWDiskStore {
+public class DiskStore {
 
+	private String name;
 	private String model;
-    private String name;
     private String serial;
     private Long size;
     private Long reads;
@@ -13,7 +13,7 @@ public class HWDiskStore {
     private Long writes;
     private Long writeBytes;
     private Long transferTime;
-    private List<HWPartition> partitions;
+    private List<Partition> partitions;
     private Long timeStamp;
 	
     public String getModel() {
@@ -70,10 +70,10 @@ public class HWDiskStore {
 	public void setTransferTime(Long transferTime) {
 		this.transferTime = transferTime;
 	}
-	public List<HWPartition> getPartitions() {
+	public List<Partition> getPartitions() {
 		return partitions;
 	}
-	public void setPartitions(List<HWPartition> partitions) {
+	public void setPartitions(List<Partition> partitions) {
 		this.partitions = partitions;
 	}
 	public Long getTimeStamp() {

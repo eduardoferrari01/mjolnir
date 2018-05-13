@@ -1,6 +1,6 @@
 package br.com.app.domain;
 
-public class HWPartition {
+public class Partition {
 
 	private String identification;
     private String name;

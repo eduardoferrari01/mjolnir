@@ -1,12 +1,12 @@
 package br.com.app.domain;
 
-public class OSFileStore {
+public class FileStore {
 
 	private String name;
 
     private String volume;
 
-    private String mount;
+    private String mountPoint;
 
     private String description;
 
@@ -33,13 +33,13 @@ public class OSFileStore {
 	public void setVolume(String volume) {
 		this.volume = volume;
 	}
-
-	public String getMount() {
-		return mount;
+	
+	public String getMountPoint() {
+		return mountPoint;
 	}
 
-	public void setMount(String mount) {
-		this.mount = mount;
+	public void setMountPoint(String mountPoint) {
+		this.mountPoint = mountPoint;
 	}
 
 	public String getDescription() {

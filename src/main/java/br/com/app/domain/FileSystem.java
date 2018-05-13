@@ -4,7 +4,7 @@ import java.util.List;
 
 public class FileSystem {
 
-	private List<OSFileStore> fileStores;
+	private List<FileStore> fileStores;
 	
 	private Long openFileDescriptors;
 	 
@@ -26,11 +26,11 @@ public class FileSystem {
 		this.maxFileDescriptors = maxFileDescriptors;
 	}
 
-	public List<OSFileStore> getFileStores() {
+	public List<FileStore> getFileStores() {
 		return fileStores;
 	}
 
-	public void setFileStores(List<OSFileStore> fileStores) {
+	public void setFileStores(List<FileStore> fileStores) {
 		this.fileStores = fileStores;
 	}
 	

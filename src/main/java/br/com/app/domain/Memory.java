@@ -1,6 +1,6 @@
 package br.com.app.domain;
 
-public class GlobalMemory {
+public class Memory {
 
 	private Long total;
 	private Long swapTotal;

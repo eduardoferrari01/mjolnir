@@ -1,15 +1,16 @@
  package br.com.app.domain;
 
-import java.net.NetworkInterface;
 import java.util.List;
 
-public class NetworkIF {
+public class Network {
 
-	//private transient NetworkInterface networkInterface;
-	private Integer mtu;
+	 
+	private String name;
+	private String displayName;
 	private String mac;
 	private List<String> ipv4;
 	private List<String> ipv6;
+	private Integer mtu;
 	private Long bytesRecv;
 	private Long bytesSent;
 	private Long packetsRecv;
@@ -18,13 +19,17 @@ public class NetworkIF {
 	private Long outErrors;
 	private Long speed;
 	private Long timeStamp;
-	
-	
-	public Integer getMtu() {
-		return mtu;
+	public String getName() {
+		return name;
 	}
-	public void setMtu(Integer mtu) {
-		this.mtu = mtu;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDisplayName() {
+		return displayName;
+	}
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
 	}
 	public String getMac() {
 		return mac;
@@ -43,6 +48,12 @@ public class NetworkIF {
 	}
 	public void setIpv6(List<String> ipv6) {
 		this.ipv6 = ipv6;
+	}
+	public Integer getMtu() {
+		return mtu;
+	}
+	public void setMtu(Integer mtu) {
+		this.mtu = mtu;
 	}
 	public Long getBytesRecv() {
 		return bytesRecv;
@@ -93,5 +104,7 @@ public class NetworkIF {
 		this.timeStamp = timeStamp;
 	}
 	
+	
+	 
 	
 }

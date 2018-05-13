@@ -2,7 +2,7 @@ package br.com.app.domain;
 
 import java.util.List;
 
-public class CentralProcessor {
+public class Processor {
 
 	 enum TickType {
         USER(0),
@@ -23,36 +23,58 @@ public class CentralProcessor {
             return index;
         }
     }
-	private String vendor;
+	
     private String name;
+    private Integer physicalPackageCount;
+    private Integer physicalProcessorCount;
+    private Integer logicalProcessorCount;
+    private String vendor;
     private Long vendorFreq;
     private String processorID;
     private String identifier;
     private Boolean isCpu64bit;
-    private String stePping;
-    private String model;
     private String family;
+    private String model;
+    private String stepping;
     private  Double systemCpuLoadBetweenTicks;
     private List<Long> systemCpuLoadTicks;
     private Double systemCpuLoad;
     private Double systemLoadAverage;
-   // private[] Double systemLoadAverage(int nelem);
-    //long[][] getProcessorCpuLoadTicks();
+    private List<Double> systemLoadAverages;
     private List <Double> processorCpuLoadBetweenTicks;
+    Long[][] processorCpuLoadTicks;
     private Long systemUptime;
-    private Integer logicalProcessorCount;
-    private Integer physicalProcessorCount;
-	public String getVendor() {
-		return vendor;
-	}
-	public void setVendor(String vendor) {
-		this.vendor = vendor;
-	}
+    private Long contextSwitches;
+    private Long interrupts;
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public Integer getPhysicalPackageCount() {
+		return physicalPackageCount;
+	}
+	public void setPhysicalPackageCount(Integer physicalPackageCount) {
+		this.physicalPackageCount = physicalPackageCount;
+	}
+	public Integer getPhysicalProcessorCount() {
+		return physicalProcessorCount;
+	}
+	public void setPhysicalProcessorCount(Integer physicalProcessorCount) {
+		this.physicalProcessorCount = physicalProcessorCount;
+	}
+	public Integer getLogicalProcessorCount() {
+		return logicalProcessorCount;
+	}
+	public void setLogicalProcessorCount(Integer logicalProcessorCount) {
+		this.logicalProcessorCount = logicalProcessorCount;
+	}
+	public String getVendor() {
+		return vendor;
+	}
+	public void setVendor(String vendor) {
+		this.vendor = vendor;
 	}
 	public Long getVendorFreq() {
 		return vendorFreq;
@@ -78,11 +100,11 @@ public class CentralProcessor {
 	public void setIsCpu64bit(Boolean isCpu64bit) {
 		this.isCpu64bit = isCpu64bit;
 	}
-	public String getStePping() {
-		return stePping;
+	public String getFamily() {
+		return family;
 	}
-	public void setStePping(String stePping) {
-		this.stePping = stePping;
+	public void setFamily(String family) {
+		this.family = family;
 	}
 	public String getModel() {
 		return model;
@@ -90,11 +112,11 @@ public class CentralProcessor {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public String getFamily() {
-		return family;
+	public String getStepping() {
+		return stepping;
 	}
-	public void setFamily(String family) {
-		this.family = family;
+	public void setStepping(String stepping) {
+		this.stepping = stepping;
 	}
 	public Double getSystemCpuLoadBetweenTicks() {
 		return systemCpuLoadBetweenTicks;
@@ -120,6 +142,12 @@ public class CentralProcessor {
 	public void setSystemLoadAverage(Double systemLoadAverage) {
 		this.systemLoadAverage = systemLoadAverage;
 	}
+	public List<Double> getSystemLoadAverages() {
+		return systemLoadAverages;
+	}
+	public void setSystemLoadAverages(List<Double> systemLoadAverages) {
+		this.systemLoadAverages = systemLoadAverages;
+	}
 	public List<Double> getProcessorCpuLoadBetweenTicks() {
 		return processorCpuLoadBetweenTicks;
 	}
@@ -132,20 +160,24 @@ public class CentralProcessor {
 	public void setSystemUptime(Long systemUptime) {
 		this.systemUptime = systemUptime;
 	}
-	public Integer getLogicalProcessorCount() {
-		return logicalProcessorCount;
+	public Long getContextSwitches() {
+		return contextSwitches;
 	}
-	public void setLogicalProcessorCount(Integer logicalProcessorCount) {
-		this.logicalProcessorCount = logicalProcessorCount;
+	public void setContextSwitches(Long contextSwitches) {
+		this.contextSwitches = contextSwitches;
 	}
-	public Integer getPhysicalProcessorCount() {
-		return physicalProcessorCount;
+	public Long getInterrupts() {
+		return interrupts;
 	}
-	public void setPhysicalProcessorCount(Integer physicalProcessorCount) {
-		this.physicalProcessorCount = physicalProcessorCount;
+	public void setInterrupts(Long interrupts) {
+		this.interrupts = interrupts;
+	}
+	public Long[][] getProcessorCpuLoadTicks() {
+		return processorCpuLoadTicks;
+	}
+	public void setProcessorCpuLoadTicks(Long[][] processorCpuLoadTicks) {
+		this.processorCpuLoadTicks = processorCpuLoadTicks;
 	}
     
     
-    
-
 }

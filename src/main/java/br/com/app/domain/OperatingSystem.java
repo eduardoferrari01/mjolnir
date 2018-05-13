@@ -1,70 +1,54 @@
 package br.com.app.domain;
 
-
 import java.util.List;
-
 
 public class OperatingSystem {
 
-	 
-    enum ProcessSort {
-        CPU, MEMORY, OLDEST, NEWEST, PID, PARENTPID, NAME
-    }
+	enum ProcessSort {
+		CPU, MEMORY, OLDEST, NEWEST, PID, PARENTPID, NAME
+	}
 
-    private String family;
+	private String family;
 
-   
-    private String manufacturer;
+	private String manufacturer;
 
-    
-    private OperatingSystemVersion version;
+	private OperatingSystemVersion version;
 
-    private FileSystem fileSystem;
+	private FileSystem fileSystem;
 
-    
-    private List<OSProcess> processes;
+	private List<Process> processes;
 
-    private Integer processId;
+	private Integer processID;
 
-    
-    private Integer processCount;
+	private Integer processCount;
 
-    
-    private Integer threadCount;
+	private Integer threadCount;
 
-    
-    private NetworkParams networkParams;
-
+	private NetworkParams networkParams;
 
 	public String getFamily() {
 		return family;
 	}
 
-
 	public void setFamily(String family) {
 		this.family = family;
 	}
-
 
 	public String getManufacturer() {
 		return manufacturer;
 	}
 
-
 	public void setManufacturer(String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
-
 
 	public OperatingSystemVersion getVersion() {
 		return version;
 	}
 
-
 	public void setVersion(OperatingSystemVersion version) {
 		this.version = version;
 	}
-
 
 	public FileSystem getFileSystem() {
 		return fileSystem;
@@ -74,46 +58,37 @@ public class OperatingSystem {
 		this.fileSystem = fileSystem;
 	}
 
-
-	public List<OSProcess> getProcesses() {
+	public List<Process> getProcesses() {
 		return processes;
 	}
 
-
-	public void setProcesses(List<OSProcess> processes) {
+	public void setProcesses(List<Process> processes) {
 		this.processes = processes;
 	}
 
-
-	public Integer getProcessId() {
-		return processId;
+	public Integer getProcessID() {
+		return processID;
 	}
 
-
-	public void setProcessId(Integer processId) {
-		this.processId = processId;
+	public void setProcessID(Integer processID) {
+		this.processID = processID;
 	}
-
 
 	public Integer getProcessCount() {
 		return processCount;
 	}
 
-
 	public void setProcessCount(Integer processCount) {
 		this.processCount = processCount;
 	}
-
 
 	public Integer getThreadCount() {
 		return threadCount;
 	}
 
-
 	public void setThreadCount(Integer threadCount) {
 		this.threadCount = threadCount;
 	}
-
 
 	public NetworkParams getNetworkParams() {
 		return networkParams;
@@ -122,5 +97,5 @@ public class OperatingSystem {
 	public void setNetworkParams(NetworkParams networkParams) {
 		this.networkParams = networkParams;
 	}
-    
+
 }

@@ -5,29 +5,41 @@ import org.springframework.data.annotation.Id;
 public class SystemInfo {
 
 	@Id
-	private String id; 
-	private OperatingSystem os ;
-	 private HardwareAbstractionLayer hardware;
-	
-	
+	private String id;
+	private String platform;
+	private OperatingSystem operatingSystem;
+	private Hardware hardware;
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
-	public OperatingSystem getOs() {
-		return os;
+
+	public String getPlatform() {
+		return platform;
 	}
-	public void setOs(OperatingSystem os) {
-		this.os = os;
+
+	public void setPlatform(String platform) {
+		this.platform = platform;
 	}
-	public HardwareAbstractionLayer getHardware() {
+
+	public OperatingSystem getOperatingSystem() {
+		return operatingSystem;
+	}
+
+	public void setOperatingSystem(OperatingSystem operatingSystem) {
+		this.operatingSystem = operatingSystem;
+	}
+
+	public Hardware getHardware() {
 		return hardware;
 	}
-	public void setHardware(HardwareAbstractionLayer hardware) {
+
+	public void setHardware(Hardware hardware) {
 		this.hardware = hardware;
 	}
-	 
-	 
+
 }

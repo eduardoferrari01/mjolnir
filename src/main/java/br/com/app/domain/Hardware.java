@@ -3,14 +3,14 @@ package br.com.app.domain;
 import java.util.List;
 
 
-public class HardwareAbstractionLayer {
+public class Hardware {
 
 	private ComputerSystem computerSystem;
-	private CentralProcessor processor;
-	private GlobalMemory memory;
+	private Processor processor;
+	private Memory memory;
 	private List<PowerSource> powerSources;
-	private List<HWDiskStore> diskStores;
-	private List<NetworkIF> networkIFs;
+	private List<DiskStore> disks;
+	private List<Network> networks;
 	private List<Display> displays;
 	private Sensors sensors;
 	private List<UsbDevice> usbDevices;
@@ -23,19 +23,19 @@ public class HardwareAbstractionLayer {
 		this.computerSystem = computerSystem;
 	}
 
-	public CentralProcessor getProcessor() {
+	public Processor getProcessor() {
 		return processor;
 	}
 
-	public void setProcessor(CentralProcessor processor) {
+	public void setProcessor(Processor processor) {
 		this.processor = processor;
 	}
 
-	public GlobalMemory getMemory() {
+	public Memory getMemory() {
 		return memory;
 	}
 
-	public void setMemory(GlobalMemory memory) {
+	public void setMemory(Memory memory) {
 		this.memory = memory;
 	}
 
@@ -46,21 +46,22 @@ public class HardwareAbstractionLayer {
 	public void setPowerSources(List<PowerSource> powerSources) {
 		this.powerSources = powerSources;
 	}
+	
+	 
 
-	public List<HWDiskStore> getDiskStores() {
-		return diskStores;
+	public List<DiskStore> getDisks() {
+		return disks;
 	}
 
-	public void setDiskStores(List<HWDiskStore> diskStores) {
-		this.diskStores = diskStores;
+	public void setDisks(List<DiskStore> disks) {
+		this.disks = disks;
+	}
+	public List<Network> getNetworks() {
+		return networks;
 	}
 
-	public List<NetworkIF> getNetworkIFs() {
-		return networkIFs;
-	}
-
-	public void setNetworkIFs(List<NetworkIF> networkIFs) {
-		this.networkIFs = networkIFs;
+	public void setNetworks(List<Network> networks) {
+		this.networks = networks;
 	}
 
 	public List<Display> getDisplays() {

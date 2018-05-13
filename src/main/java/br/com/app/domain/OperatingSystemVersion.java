@@ -4,7 +4,7 @@ public class OperatingSystemVersion {
 
 	private String version;
 	private String codeName;
-	private String buildNumber;
+	private String build;
 	
 	
 	public String getVersion() {
@@ -19,12 +19,13 @@ public class OperatingSystemVersion {
 	public void setCodeName(String codeName) {
 		this.codeName = codeName;
 	}
-	public String getBuildNumber() {
-		return buildNumber;
+	public String getBuild() {
+		return build;
 	}
-	public void setBuildNumber(String buildNumber) {
-		this.buildNumber = buildNumber;
+	public void setBuild(String build) {
+		this.build = build;
 	}
+	 
 	
 	
 	
