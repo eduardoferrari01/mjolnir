@@ -1,4 +1,4 @@
-package br.com.app.domain;
+package br.com.app.domain.hardware;
 
 public class Partition {
 

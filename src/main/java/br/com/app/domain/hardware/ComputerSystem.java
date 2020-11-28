@@ -1,4 +1,4 @@
-package br.com.app.domain;
+package br.com.app.domain.hardware;
 
 public class ComputerSystem {
 
@@ -39,5 +39,10 @@ public class ComputerSystem {
 		this.baseboard = baseboard;
 	}
 	
+	@Override
+	public String toString() {
+		return "ComputerSystem [manufacturer=" + manufacturer + ", model=" + model + ", serialNumber=" + serialNumber
+				+ ", firmware=" + firmware + ", baseboard=" + baseboard + "]";
+	}
 	
 }

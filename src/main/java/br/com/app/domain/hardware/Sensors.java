@@ -1,4 +1,4 @@
-package br.com.app.domain;
+package br.com.app.domain.hardware;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ public class Sensors {
 	private Double cpuTemperature;
 	private List<Integer>fanSpeeds;
 	private Double cpuVoltage;
+	
 	public Double getCpuTemperature() {
 		return cpuTemperature;
 	}

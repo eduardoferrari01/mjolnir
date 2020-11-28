@@ -1,4 +1,4 @@
-package br.com.app.domain;
+package br.com.app.domain.hardware;
 
 public class Firmware {
 
@@ -9,9 +9,8 @@ public class Firmware {
 	private String description;
 
 	private String version;
-
-	 
-/*	private String releaseDate;*/
+	//trocar o tipo por LocalDate
+	private String releaseDate;
 
 	public String getManufacturer() {
 		return manufacturer;
@@ -45,13 +44,12 @@ public class Firmware {
 		this.version = version;
 	}
 
-	/*
-	 * public String getReleaseDate() { return releaseDate; }
-	 * 
-	 * public void setReleaseDate(String releaseDate) { this.releaseDate =
-	 * releaseDate; }
-	 */
-	
- 
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
 
 }

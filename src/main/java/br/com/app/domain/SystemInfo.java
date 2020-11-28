@@ -2,6 +2,8 @@ package br.com.app.domain;
 
 import org.springframework.data.annotation.Id;
 
+import br.com.app.domain.operatingsystem.OperatingSystem;
+
 public class SystemInfo {
 
   @Id
@@ -9,7 +11,7 @@ public class SystemInfo {
   private String hash;
   private String platform;
   private OperatingSystem operatingSystem;
-  private Hardware hardware;
+ 
 
   public String getId() {
     return id;
@@ -34,15 +36,6 @@ public class SystemInfo {
   public void setOperatingSystem(OperatingSystem operatingSystem) {
     this.operatingSystem = operatingSystem;
   }
-
-  public Hardware getHardware() {
-    return hardware;
-  }
-
-  public void setHardware(Hardware hardware) {
-    this.hardware = hardware;
-  }
-
   public String getHash() {
     return hash;
   }

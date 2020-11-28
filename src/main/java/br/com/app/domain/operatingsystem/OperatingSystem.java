@@ -1,6 +1,8 @@
-package br.com.app.domain;
+package br.com.app.domain.operatingsystem;
 
 import java.util.List;
+
+import br.com.app.domain.hardware.Process;
 
 public class OperatingSystem {
 

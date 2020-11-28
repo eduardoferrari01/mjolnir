@@ -1,4 +1,4 @@
-package br.com.app.domain;
+package br.com.app.domain.operatingsystem;
 
 import java.util.List;
 
