@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import br.com.app.domain.ColetaResultado;
+import br.com.app.domain.NotFoundException;
 import br.com.app.domain.hardware.Processor;
-import br.com.app.domain.server.NotFoundException;
-import br.com.app.domain.server.ProcessorService;
+import br.com.app.service.hardware.ProcessorService;
 import br.com.app.util.ConvertJson;
 
 @RestController
@@ -30,11 +30,10 @@ public class ProcessorController {
 	@Autowired
 	private ProcessorService processorService;
 	
-	@ResponseStatus(HttpStatus.OK)
+	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping
 	public void post(@RequestBody ColetaResultado coletaResultado) {
 		
-		//System.out.println(coletaResultado.getJson());
 		ConvertJson convertJson = new ConvertJson();
 		Processor processor = (Processor) convertJson.jsonToObject(coletaResultado.getJson(), Processor.class);
 		processor.setId(coletaResultado.getId());

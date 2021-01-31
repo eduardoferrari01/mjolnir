@@ -1,12 +1,13 @@
-package br.com.app.domain.server;
+package br.com.app.service.hardware;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.app.domain.NotFoundException;
 import br.com.app.domain.hardware.Processor;
-import br.com.app.repository.ProcessorRepository;
+import br.com.app.repository.hardware.ProcessorRepository;
 
 @Service
 public class ProcessorService {

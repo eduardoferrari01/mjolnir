@@ -1,4 +1,4 @@
-package br.com.app.domain.server;
+package br.com.app.domain;
 
 public class NotFoundException extends  RuntimeException{
 

@@ -3,7 +3,7 @@ package br.com.app.domain.hardware;
 import java.util.List;
 
 public class Network {
-
+	
 	private String name;
 	private String displayName;
 	private Integer mtu;

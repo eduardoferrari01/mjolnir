@@ -2,12 +2,25 @@ package br.com.app.domain.hardware;
 
 import java.util.List;
 
-public class Sensors {
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document
+public class Sensor {
+
+	@Id
+	private String id;
+	
 	private Double cpuTemperature;
 	private List<Integer>fanSpeeds;
 	private Double cpuVoltage;
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public Double getCpuTemperature() {
 		return cpuTemperature;
 	}

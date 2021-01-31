@@ -1,4 +1,4 @@
-package br.com.app.repository;
+package br.com.app.repository.hardware;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

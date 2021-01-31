@@ -1,13 +1,25 @@
 package br.com.app.domain.hardware;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class ComputerSystem {
 
+	@Id
+	private String id;
 	private String manufacturer;
 	private String model;
 	private String serialNumber;
 	private Firmware firmware;
 	private Baseboard baseboard;
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getManufacturer() {
 		return manufacturer;
 	}
