@@ -1,0 +1,18 @@
+{
+  "firmware" : {
+    "manufacturer" : "unknown",
+    "description" : "dmi:bvnAmericanMegatrendsInc.:bvr4307:bd05/13/2013:br4.6:svnSystemmanufacturer:pnSystemProductName:pvrSystemVersion:rvnASUSTeKCOMPUTERINC.:rnP8H61-MLE/BR:rvrRevx.0x:cvnChassisManufacture:ct3:cvrChassisVersion:",
+    "version" : "4307",
+    "releaseDate" : "2013-05-13",
+    "name" : "unknown"
+  },
+  "baseboard" : {
+    "manufacturer" : "ASUSTeK COMPUTER INC.",
+    "model" : "P8H61-M LE/BR",
+    "version" : "Rev x.0x",
+    "serialNumber" : "unknown"
+  },
+  "manufacturer" : "System manufacturer",
+  "model" : "System Product Name (version: System Version)",
+  "serialNumber" : "unknown"
+} 

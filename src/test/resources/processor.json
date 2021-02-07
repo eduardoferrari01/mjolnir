@@ -1,0 +1,48 @@
+{
+  "maxFreq" : 3400000000,
+  "currentFreq" : [ 3162660000, 3013177000, 2929436000, 2892862000 ],
+  "contextSwitches" : 378725741,
+  "interrupts" : 101401698,
+  "systemCpuLoadTicks" : [ 22291440, 13740, 6858880, 310385380, 377370, 530210, 392830, 0 ],
+  "processorCpuLoadTicks" : [ [ 5332910, 3650, 1648780, 77885600, 70800, 135140, 131480, 0 ], [ 5701220, 3420, 1742170, 77534770, 64620, 106940, 73240, 0 ], [ 5671730, 3420, 1742380, 77450200, 161840, 112540, 85590, 0 ], [ 5585570, 3240, 1725540, 77514790, 80090, 175570, 102510, 0 ] ],
+  "physicalPackageCount" : 1,
+  "physicalProcessorCount" : 4,
+  "logicalProcessorCount" : 4,
+  "logicalProcessors" : [ {
+    "processorNumber" : 0,
+    "physicalProcessorNumber" : 0,
+    "physicalPackageNumber" : 0,
+    "numaNode" : 0,
+    "processorGroup" : 0
+  }, {
+    "processorNumber" : 1,
+    "physicalProcessorNumber" : 1,
+    "physicalPackageNumber" : 0,
+    "numaNode" : 0,
+    "processorGroup" : 0
+  }, {
+    "processorNumber" : 2,
+    "physicalProcessorNumber" : 2,
+    "physicalPackageNumber" : 0,
+    "numaNode" : 0,
+    "processorGroup" : 0
+  }, {
+    "processorNumber" : 3,
+    "physicalProcessorNumber" : 3,
+    "physicalPackageNumber" : 0,
+    "numaNode" : 0,
+    "processorGroup" : 0
+  } ],
+  "processorIdentifier" : {
+    "processorID" : "R8C1FCAA002006C7",
+    "cpu64bit" : true,
+    "model" : "42",
+    "microarchitecture" : "Sandy Bridge (Client)",
+    "stepping" : "7",
+    "vendorFreq" : 3100000000,
+    "vendor" : "GenuineIntel",
+    "identifier" : "Intel64 Family 6 Model 42 Stepping 7",
+    "family" : "6",
+    "name" : "Intel(R) Core(TM) i5-2400 CPU @ 3.10GHz"
+  }
+} 

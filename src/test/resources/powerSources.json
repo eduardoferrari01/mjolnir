@@ -1,0 +1,23 @@
+[ {
+  "name" : "hidpp_battery_0",
+  "deviceName" : "Wireless Keyboard  ",
+  "remainingCapacityPercent" : -1.0,
+  "timeRemainingEstimated" : -1.0,
+  "timeRemainingInstant" : -1.0,
+  "powerUsageRate" : 0.0,
+  "voltage" : -1.0,
+  "amperage" : 0.0,
+  "powerOnLine" : false,
+  "charging" : false,
+  "discharging" : true,
+  "capacityUnits" : "RELATIVE",
+  "currentCapacity" : -1,
+  "maxCapacity" : -1,
+  "designCapacity" : -1,
+  "cycleCount" : -1,
+  "chemistry" : "unknown",
+  "manufactureDate" : "2021-02-01",
+  "manufacturer" : "Logitech",
+  "serialNumber" : "4023-00-00-00-00",
+  "temperature" : 0.0
+} ] 

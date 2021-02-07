@@ -1,0 +1,41 @@
+[ {
+  "name" : "/dev/sda",
+  "model" : "KINGSTON_SUV411S37240X",
+  "serial" : "51927W1254022C4C",
+  "size" : 240057409536,
+  "reads" : 114154,
+  "readBytes" : 3240115712,
+  "writes" : 810385,
+  "writeBytes" : 12808667648,
+  "currentQueueLength" : 0,
+  "transferTime" : 1246057,
+  "timeStamp" : 1612633018065,
+  "partitions" : [ {
+    "identification" : "/dev/sda1",
+    "name" : "/sys/devices/pci0000:00/0000:00:1f.2/ata5/host4/target4:0:0/4:0:0:0/block/sda/sda1",
+    "type" : "ext4",
+    "uuid" : "edb4414c-8423-41b1-9ed4-w9dc748d29e1",
+    "size" : 92624209920,
+    "major" : 8,
+    "minor" : 1,
+    "mountPoint" : "/"
+  }, {
+    "identification" : "/dev/sda2",
+    "name" : "/sys/devices/pci0000:00/0000:00:1f.2/ata5/host4/target4:0:0/4:0:0:0/block/sda/sda2",
+    "type" : "swap",
+    "uuid" : "bf4aa86e-13a5-48f0-85ef-7d68cfcd31e1",
+    "size" : 8450208256,
+    "major" : 8,
+    "minor" : 2,
+    "mountPoint" : ""
+  }, {
+    "identification" : "/dev/sda3",
+    "name" : "/sys/devices/pci0000:00/0000:00:1f.2/ata5/host4/target4:0:0/4:0:0:0/block/sda/sda3",
+    "type" : "ext4",
+    "uuid" : "340b83b2-dac8-445a-8433-3c42f3602acf",
+    "size" : 138979329024,
+    "major" : 8,
+    "minor" : 3,
+    "mountPoint" : ""
+  } ]
+} ]

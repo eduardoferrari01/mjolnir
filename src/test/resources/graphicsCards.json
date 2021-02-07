@@ -1,0 +1,7 @@
+[{
+	"name": "2nd Generation Core Processor Family Integrated Graphics Controller",
+	"deviceId": "0x0115",
+	"vendor": "Intel Corporation (0x8086)",
+	"versionInfo": "unknown",
+	"vram": 268435456
+}]
