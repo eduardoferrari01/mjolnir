@@ -1,6 +1,5 @@
 package br.com.app.domain.hardware;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -33,13 +32,5 @@ public class NetworkIF {
 
 	public void setNetworks(List<Network> networks) {
 		this.networks = networks;
-	}
-	
-	public void add(Network network) {
-		
-		if(networks == null) {
-			networks = new ArrayList<Network>();
-		}
-		networks.add(network);
 	}
 }

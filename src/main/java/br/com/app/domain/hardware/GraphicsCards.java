@@ -1,6 +1,5 @@
 package br.com.app.domain.hardware;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -30,12 +29,4 @@ public class GraphicsCards {
 		this.graphicsCards = graphicsCards;
 	}
 	
-	public void add(GraphicsCard graphicsCard) {
-		
-		if(graphicsCards == null) {
-			graphicsCards = new ArrayList<GraphicsCard>();
-		}
-		
-		graphicsCards.add(graphicsCard);
-	}
 }

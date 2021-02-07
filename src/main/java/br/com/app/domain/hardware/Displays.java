@@ -1,6 +1,5 @@
 package br.com.app.domain.hardware;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -29,15 +28,4 @@ public class Displays {
 	public void setDisplays(List<Display> displays) {
 		this.displays = displays;
 	}
-
-	public void add(Display display) {
-		
-		if(displays == null) {
-			
-			displays = new ArrayList<Display>();
-		}
-		displays.add(display);
-		
-	}
-	
 }

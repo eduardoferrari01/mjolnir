@@ -1,6 +1,5 @@
 package br.com.app.domain.hardware;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -24,13 +23,4 @@ public class PowerSources {
 	public void setPowerSources(List<PowerSource> powerSources) {
 		this.powerSources = powerSources;
 	}
-	
-	public void add(PowerSource powerSource) {
-		
-		if(powerSources == null) {
-			powerSources = new ArrayList<PowerSource>();
-		}
-		powerSources.add(powerSource);
-	}
-	
 }

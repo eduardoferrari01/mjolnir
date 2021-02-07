@@ -11,8 +11,11 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 public class LocalDateDeserializer extends JsonDeserializer<LocalDate>{
 
 	@Override
-    public LocalDate deserialize(JsonParser arg0, DeserializationContext arg1) throws IOException, JsonProcessingException {
-        return LocalDate.parse(arg0.getText());
+    public LocalDate deserialize(JsonParser jsonParser, DeserializationContext ctx) throws IOException, JsonProcessingException {
+        
+		String str = jsonParser.getText();
+		
+		return LocalDate.parse(str);
     }
 
 	

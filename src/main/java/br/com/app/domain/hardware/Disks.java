@@ -1,6 +1,5 @@
 package br.com.app.domain.hardware;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,7 +11,7 @@ public class Disks {
 
 	@Id
 	private String id;
-	
+
 	private List<DiskStore> diskStores;
 
 	public String getId() {
@@ -35,15 +34,6 @@ public class Disks {
 
 	public void setDiskStores(List<DiskStore> diskStores) {
 		this.diskStores = diskStores;
-	}
-
-	public void add(DiskStore diskStore) {
-
-		if (diskStores == null) {
-			diskStores = new ArrayList<DiskStore>();
-		}
-
-		diskStores.add(diskStore);
 	}
 
 }
