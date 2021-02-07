@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.app.domain.ColetaResultado;
-import br.com.app.domain.hardware.ComputerSystem;
 import br.com.app.service.hardware.ComputerSystemService;
-import br.com.app.util.ConvertJson;
 
 @RestController
 @RequestMapping("/api/computersystem")
@@ -28,13 +26,7 @@ public class ComputerSystemController {
 	@PostMapping
 	public void post(@RequestBody ColetaResultado coletaResultado) {
 
-		System.out.println(coletaResultado.getJson());
-		
-		ConvertJson convertJson = new ConvertJson();
-		ComputerSystem computerSystem = (ComputerSystem) convertJson.jsonToObject(coletaResultado.getJson(),
-				ComputerSystem.class);
-		computerSystem.setId(coletaResultado.getId());
-		computerSystemService.save(computerSystem);
+		computerSystemService.save(coletaResultado);
 	}
 	
 }

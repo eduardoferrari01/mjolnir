@@ -3,6 +3,8 @@ package br.com.app.service.hardware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.app.domain.ColetaResultado;
+import br.com.app.domain.builder.hardware.ComputerSystemBuilder;
 import br.com.app.domain.hardware.ComputerSystem;
 import br.com.app.repository.hardware.ComputerSystemRepository;
 
@@ -11,10 +13,12 @@ public class ComputerSystemService {
 
 	@Autowired
 	private ComputerSystemRepository computerSystemRepository;
-	
-	public void save(ComputerSystem computerSystem) {
-		
+
+	public void save(ColetaResultado coletaResultado) {
+
+		ComputerSystem computerSystem = new ComputerSystemBuilder(coletaResultado).builder();
+
 		computerSystemRepository.save(computerSystem);
-		
+
 	}
 }

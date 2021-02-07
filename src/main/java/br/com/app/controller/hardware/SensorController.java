@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.app.domain.ColetaResultado;
-import br.com.app.domain.hardware.Sensor;
 import br.com.app.service.hardware.SensorService;
-import br.com.app.util.ConvertJson;
 
 @RestController
 @RequestMapping("/api/sensors")
@@ -25,10 +23,6 @@ public class SensorController {
 	@PostMapping
 	public void post(@RequestBody ColetaResultado coletaResultado) {
 		
-		  ConvertJson convertJson = new ConvertJson();
-		   
-		  Sensor sensor  =  (Sensor) convertJson.jsonToObject(coletaResultado.getJson(), Sensor.class);
-		  sensor.setId(coletaResultado.getId());
-		  sensorsService.save(sensor);
+		  sensorsService.save(coletaResultado);
 	}
 }

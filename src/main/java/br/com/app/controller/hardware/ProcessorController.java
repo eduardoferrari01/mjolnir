@@ -19,7 +19,6 @@ import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.NotFoundException;
 import br.com.app.domain.hardware.Processor;
 import br.com.app.service.hardware.ProcessorService;
-import br.com.app.util.ConvertJson;
 
 @RestController
 @RequestMapping("/api/processor")
@@ -34,10 +33,7 @@ public class ProcessorController {
 	@PostMapping
 	public void post(@RequestBody ColetaResultado coletaResultado) {
 		
-		ConvertJson convertJson = new ConvertJson();
-		Processor processor = (Processor) convertJson.jsonToObject(coletaResultado.getJson(), Processor.class);
-		processor.setId(coletaResultado.getId());
-		processorService.save(processor);
+		processorService.save(coletaResultado);
 	}
 	
 	@ResponseStatus(HttpStatus.OK)
