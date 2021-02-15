@@ -25,19 +25,7 @@ public class ConfigController {
 	@PostMapping()
 	public ConfigAgente createConfig(@RequestBody String hostName) {
 
-		ConfigAgente configAgente = configAgenteService.findByHostName(hostName);
-
-		if (configAgente == null) {
-
-			configAgente = new ConfigAgente();
-			GenerateHash generateHash = new GenerateHash("SHA-256");
-			configAgente.setHostName(hostName);
-			configAgente.setHash(generateHash.gerar(hostName));
-			configAgenteService.save(configAgente);
-		}
-
-		return configAgente;
-
+		return configAgenteService.createConfig(hostName);
 	}
 	
 	@GetMapping("/{id}")

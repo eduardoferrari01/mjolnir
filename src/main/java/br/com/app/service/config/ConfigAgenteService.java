@@ -12,9 +12,17 @@ public class ConfigAgenteService {
 	@Autowired
 	private ConfigAgenteRepository configAgenteRepository;
 	
-	public void save(ConfigAgente configAgente) {
+	public ConfigAgente createConfig(String hostName) {
 		
-		configAgenteRepository.save(configAgente);
+		ConfigAgente configAgente = configAgenteRepository.findByHostName(hostName);
+
+		if (configAgente == null) {
+
+			configAgente = new ConfigAgente.Builder(hostName).build();
+			configAgenteRepository.save(configAgente);
+		}
+		
+		return configAgente;
 	}
 	
 	public ConfigAgente findByHostName(String hostName) {
