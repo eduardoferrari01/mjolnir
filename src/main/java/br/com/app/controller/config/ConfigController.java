@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.app.domain.ConfigAgente;
 import br.com.app.service.config.ConfigAgenteService;
-import br.com.app.util.GenerateHash;
 
 @RestController
 @RequestMapping("/api/config")
