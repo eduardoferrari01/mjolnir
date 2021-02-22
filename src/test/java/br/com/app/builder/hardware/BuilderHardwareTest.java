@@ -16,7 +16,7 @@ import br.com.app.domain.builder.hardware.GraphicsCardsBuilder;
 import br.com.app.domain.builder.hardware.MemoryBuilder;
 import br.com.app.domain.builder.hardware.NetworkIFBuilder;
 import br.com.app.domain.builder.hardware.PowerSourcesBuilder;
-import br.com.app.domain.builder.hardware.ProcessorBuilder;
+import br.com.app.domain.builder.hardware.CentralProcessorBuilder;
 import br.com.app.domain.builder.hardware.SensorBuilder;
 import br.com.app.domain.hardware.ComputerSystem;
 import br.com.app.domain.hardware.Disks;
@@ -25,7 +25,7 @@ import br.com.app.domain.hardware.GraphicsCards;
 import br.com.app.domain.hardware.Memory;
 import br.com.app.domain.hardware.NetworkIF;
 import br.com.app.domain.hardware.PowerSources;
-import br.com.app.domain.hardware.Processor;
+import br.com.app.domain.hardware.CentralProcessor;
 import br.com.app.domain.hardware.Sensor;
 
 public class BuilderHardwareTest {
@@ -131,11 +131,11 @@ public class BuilderHardwareTest {
 	}
 	
 	@Test
-	public void deveRetornarUmProcessor() throws IOException{
+	public void deveRetornarUmCentralProcessor() throws IOException{
 		
 		String json = Files.readString(Paths.get(path+"processor.json")).trim();
 		coletaResultado.setJson(json);
-		Processor processor = new ProcessorBuilder(coletaResultado).builder();
+		CentralProcessor processor = new CentralProcessorBuilder(coletaResultado).builder();
 		
 		Assertions.assertNotNull(processor);
 		Assertions.assertNotNull(processor.getId());
