@@ -1,15 +1,16 @@
 package br.com.app.domain.os;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class InternetProtocolStats {
 
+	@Id
 	private String id;
-	
 	private TcpStats tcpV4Stats;
-	
 	private TcpStats tcpV6Stats;
-	
 	private UdpStats udpV4Stats;
-	
 	private UdpStats udpV6Stats;
 
 	public String getId() {

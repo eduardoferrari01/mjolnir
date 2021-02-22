@@ -1,29 +1,25 @@
 package br.com.app.domain.os;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class OperatingSystem {
 
 	enum ProcessSort {
 		CPU, MEMORY, OLDEST, NEWEST, PID, PARENTPID, NAME
 	}
 	
+	@Id
 	private String id;
-	
 	private String family;
-
 	private String manufacturer;
-
 	private Integer processId;
-
 	private Integer processCount;
-
 	private Integer threadCount;
-
 	private Integer bitness;
-
 	private Long systemUptime;
-
 	private Long systemBootTime;
-
 	private Boolean isElevated;
 
 	public String getId() {

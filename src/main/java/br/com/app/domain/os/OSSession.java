@@ -1,7 +1,12 @@
 package br.com.app.domain.os;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class OSSession {
 
+	@Id
 	private String id;
 	private String userName;
 	private String terminalDevice;

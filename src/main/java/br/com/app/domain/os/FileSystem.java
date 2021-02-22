@@ -2,14 +2,16 @@ package br.com.app.domain.os;
 
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class FileSystem {
 
+	@Id
 	private String id;
-	
 	private List<OSFileStore> fileStores;
-	
 	private Long openFileDescriptors;
-	 
 	private Long maxFileDescriptors;
 
 	public String getId() {
