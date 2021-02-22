@@ -2,8 +2,8 @@ package br.com.app.repository.hardware;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import br.com.app.domain.hardware.Processor;
+import br.com.app.domain.hardware.CentralProcessor;
 
-public interface ProcessorRepository extends MongoRepository<Processor,String> {
+public interface CentralProcessorRepository extends MongoRepository<CentralProcessor,String> {
 
 }

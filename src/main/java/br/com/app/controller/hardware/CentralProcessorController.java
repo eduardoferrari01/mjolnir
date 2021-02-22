@@ -17,17 +17,17 @@ import org.springframework.web.server.ResponseStatusException;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.NotFoundException;
-import br.com.app.domain.hardware.Processor;
-import br.com.app.service.hardware.ProcessorService;
+import br.com.app.domain.hardware.CentralProcessor;
+import br.com.app.service.hardware.CentralProcessorService;
 
 @RestController
 @RequestMapping("/api/processor")
-public class ProcessorController {
+public class CentralProcessorController {
 
-	private Logger logger = LoggerFactory.getLogger(ProcessorController.class);
+	private Logger logger = LoggerFactory.getLogger(CentralProcessorController.class);
 	
 	@Autowired
-	private ProcessorService processorService;
+	private CentralProcessorService processorService;
 	
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping
@@ -38,14 +38,14 @@ public class ProcessorController {
 	
 	@ResponseStatus(HttpStatus.OK)
 	@GetMapping
-	public List<Processor> findAll(){
+	public List<CentralProcessor> findAll(){
 		
 		return processorService.findAll();
 	}
 	
 	@ResponseStatus(HttpStatus.OK)
 	@GetMapping("/{id}")
-	public Processor findById(@PathVariable String id){
+	public CentralProcessor findById(@PathVariable String id){
 		
 		try {
 			logger.info("Searching processor for id ="+id);
