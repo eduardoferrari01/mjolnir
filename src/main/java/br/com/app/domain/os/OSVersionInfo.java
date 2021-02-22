@@ -1,12 +1,19 @@
-package br.com.app.domain.operatingsystem;
+package br.com.app.domain.os;
 
-public class OperatingSystemVersion {
+public class OSVersionInfo {
 
+	private String id;
 	private String version;
 	private String codeName;
-	private String build;
+	private String buildNumber;
+	private String versionStr;
 	
-	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getVersion() {
 		return version;
 	}
@@ -19,15 +26,16 @@ public class OperatingSystemVersion {
 	public void setCodeName(String codeName) {
 		this.codeName = codeName;
 	}
-	public String getBuild() {
-		return build;
+	public String getBuildNumber() {
+		return buildNumber;
 	}
-	public void setBuild(String build) {
-		this.build = build;
+	public void setBuildNumber(String buildNumber) {
+		this.buildNumber = buildNumber;
 	}
-	 
-	
-	
-	
-	
+	public String getVersionStr() {
+		return versionStr;
+	}
+	public void setVersionStr(String versionStr) {
+		this.versionStr = versionStr;
+	}
 }

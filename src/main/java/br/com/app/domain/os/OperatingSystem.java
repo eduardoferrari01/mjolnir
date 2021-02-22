@@ -1,32 +1,38 @@
-package br.com.app.domain.operatingsystem;
-
-import java.util.List;
-
-import br.com.app.domain.hardware.Process;
+package br.com.app.domain.os;
 
 public class OperatingSystem {
 
 	enum ProcessSort {
 		CPU, MEMORY, OLDEST, NEWEST, PID, PARENTPID, NAME
 	}
-
+	
+	private String id;
+	
 	private String family;
 
 	private String manufacturer;
 
-	private OperatingSystemVersion version;
-
-	private FileSystem fileSystem;
-
-	private List<Process> processes;
-
-	private Integer processID;
+	private Integer processId;
 
 	private Integer processCount;
 
 	private Integer threadCount;
 
-	private NetworkParams networkParams;
+	private Integer bitness;
+
+	private Long systemUptime;
+
+	private Long systemBootTime;
+
+	private Boolean isElevated;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getFamily() {
 		return family;
@@ -44,36 +50,12 @@ public class OperatingSystem {
 		this.manufacturer = manufacturer;
 	}
 
-	public OperatingSystemVersion getVersion() {
-		return version;
+	public Integer getProcessId() {
+		return processId;
 	}
 
-	public void setVersion(OperatingSystemVersion version) {
-		this.version = version;
-	}
-
-	public FileSystem getFileSystem() {
-		return fileSystem;
-	}
-
-	public void setFileSystem(FileSystem fileSystem) {
-		this.fileSystem = fileSystem;
-	}
-
-	public List<Process> getProcesses() {
-		return processes;
-	}
-
-	public void setProcesses(List<Process> processes) {
-		this.processes = processes;
-	}
-
-	public Integer getProcessID() {
-		return processID;
-	}
-
-	public void setProcessID(Integer processID) {
-		this.processID = processID;
+	public void setProcessId(Integer processId) {
+		this.processId = processId;
 	}
 
 	public Integer getProcessCount() {
@@ -92,12 +74,35 @@ public class OperatingSystem {
 		this.threadCount = threadCount;
 	}
 
-	public NetworkParams getNetworkParams() {
-		return networkParams;
+	public Integer getBitness() {
+		return bitness;
 	}
 
-	public void setNetworkParams(NetworkParams networkParams) {
-		this.networkParams = networkParams;
+	public void setBitness(Integer bitness) {
+		this.bitness = bitness;
 	}
 
+	public Long getSystemUptime() {
+		return systemUptime;
+	}
+
+	public void setSystemUptime(Long systemUptime) {
+		this.systemUptime = systemUptime;
+	}
+
+	public Long getSystemBootTime() {
+		return systemBootTime;
+	}
+
+	public void setSystemBootTime(Long systemBootTime) {
+		this.systemBootTime = systemBootTime;
+	}
+
+	public Boolean getIsElevated() {
+		return isElevated;
+	}
+
+	public void setIsElevated(Boolean isElevated) {
+		this.isElevated = isElevated;
+	}
 }

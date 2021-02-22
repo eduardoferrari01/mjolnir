@@ -1,22 +1,36 @@
-package br.com.app.domain.operatingsystem;
+package br.com.app.domain.os;
 
-public class FileStore {
+public class OSFileStore {
 
 	private String name;
 
     private String volume;
+    
+    private String label;
 
-    private String mountPoint;
+    private String logicalVolume;
+    
+    private String mount;
 
     private String description;
 
-    private String fsType;
+    private String type;
+    
+    private String options;
 
     private String uuid;
 
+    private String freeSpace;
+    
     private Long usableSpace;
 
     private Long totalSpace;
+    
+    private Long freeInodes;
+    
+    private Long totalInodes;
+    
+    private Boolean updateAttributes;
 
 	public String getName() {
 		return name;
@@ -33,13 +47,29 @@ public class FileStore {
 	public void setVolume(String volume) {
 		this.volume = volume;
 	}
-	
-	public String getMountPoint() {
-		return mountPoint;
+
+	public String getLabel() {
+		return label;
 	}
 
-	public void setMountPoint(String mountPoint) {
-		this.mountPoint = mountPoint;
+	public void setLabel(String label) {
+		this.label = label;
+	}
+
+	public String getLogicalVolume() {
+		return logicalVolume;
+	}
+
+	public void setLogicalVolume(String logicalVolume) {
+		this.logicalVolume = logicalVolume;
+	}
+
+	public String getMount() {
+		return mount;
+	}
+
+	public void setMount(String mount) {
+		this.mount = mount;
 	}
 
 	public String getDescription() {
@@ -50,12 +80,20 @@ public class FileStore {
 		this.description = description;
 	}
 
-	public String getFsType() {
-		return fsType;
+	public String getType() {
+		return type;
 	}
 
-	public void setFsType(String fsType) {
-		this.fsType = fsType;
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getOptions() {
+		return options;
+	}
+
+	public void setOptions(String options) {
+		this.options = options;
 	}
 
 	public String getUuid() {
@@ -64,6 +102,14 @@ public class FileStore {
 
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
+	}
+
+	public String getFreeSpace() {
+		return freeSpace;
+	}
+
+	public void setFreeSpace(String freeSpace) {
+		this.freeSpace = freeSpace;
 	}
 
 	public Long getUsableSpace() {
@@ -81,6 +127,29 @@ public class FileStore {
 	public void setTotalSpace(Long totalSpace) {
 		this.totalSpace = totalSpace;
 	}
-    
+
+	public Long getFreeInodes() {
+		return freeInodes;
+	}
+
+	public void setFreeInodes(Long freeInodes) {
+		this.freeInodes = freeInodes;
+	}
+
+	public Long getTotalInodes() {
+		return totalInodes;
+	}
+
+	public void setTotalInodes(Long totalInodes) {
+		this.totalInodes = totalInodes;
+	}
+
+	public Boolean getUpdateAttributes() {
+		return updateAttributes;
+	}
+
+	public void setUpdateAttributes(Boolean updateAttributes) {
+		this.updateAttributes = updateAttributes;
+	}
     
 }

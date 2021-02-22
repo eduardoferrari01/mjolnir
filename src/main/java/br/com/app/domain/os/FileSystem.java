@@ -1,14 +1,24 @@
-package br.com.app.domain.operatingsystem;
+package br.com.app.domain.os;
 
 import java.util.List;
 
 public class FileSystem {
 
-	private List<FileStore> fileStores;
+	private String id;
+	
+	private List<OSFileStore> fileStores;
 	
 	private Long openFileDescriptors;
 	 
 	private Long maxFileDescriptors;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public Long getOpenFileDescriptors() {
 		return openFileDescriptors;
@@ -26,11 +36,11 @@ public class FileSystem {
 		this.maxFileDescriptors = maxFileDescriptors;
 	}
 
-	public List<FileStore> getFileStores() {
+	public List<OSFileStore> getFileStores() {
 		return fileStores;
 	}
 
-	public void setFileStores(List<FileStore> fileStores) {
+	public void setFileStores(List<OSFileStore> fileStores) {
 		this.fileStores = fileStores;
 	}
 	
