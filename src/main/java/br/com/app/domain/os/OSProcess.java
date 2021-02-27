@@ -1,5 +1,7 @@
 package br.com.app.domain.os;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,14 +10,15 @@ public class OSProcess {
 	
 	@Id
 	private String id;
-	private String name = "";
-	private String path = "";
-	private String commandLine = "";
-	private String user = "";
-	private String userID = "";
-	private String group = "";
-	private String groupID = "";
-	private State state = State.OTHER;
+	private String name;
+	private String path;
+	private String commandLine;
+	private String currentWorkingDirectory;
+	private String user;
+	private String userID;
+	private String group;
+	private String groupID;
+	private State state;
 	private Integer processID;
 	private Integer parentProcessID;
 	private Integer threadCount;
@@ -24,11 +27,19 @@ public class OSProcess {
 	private Long residentSetSize;
 	private Long kernelTime;
 	private Long userTime;
-	private Long startTime;
 	private Long upTime;
+	private Long startTime;
 	private Long bytesRead;
 	private Long bytesWritten;
-
+	private Long openFiles;
+	private Double processCpuLoadCumulative;
+	private Integer bitness;
+	private Long affinityMask;
+	private Boolean updateAttributes;
+	private List<OSThread> threadDetails;
+	private Long minorFaults;
+	private Long majorFaults;
+	
 	public enum State {
 		NEW, RUNNING, SLEEPING, WAITING, ZOMBIE, STOPPED, OTHER
 	}
@@ -63,6 +74,14 @@ public class OSProcess {
 
 	public void setCommandLine(String commandLine) {
 		this.commandLine = commandLine;
+	}
+
+	public String getCurrentWorkingDirectory() {
+		return currentWorkingDirectory;
+	}
+
+	public void setCurrentWorkingDirectory(String currentWorkingDirectory) {
+		this.currentWorkingDirectory = currentWorkingDirectory;
 	}
 
 	public String getUser() {
@@ -169,20 +188,20 @@ public class OSProcess {
 		this.userTime = userTime;
 	}
 
-	public Long getStartTime() {
-		return startTime;
-	}
-
-	public void setStartTime(Long startTime) {
-		this.startTime = startTime;
-	}
-
 	public Long getUpTime() {
 		return upTime;
 	}
 
 	public void setUpTime(Long upTime) {
 		this.upTime = upTime;
+	}
+
+	public Long getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
 	}
 
 	public Long getBytesRead() {
@@ -201,4 +220,67 @@ public class OSProcess {
 		this.bytesWritten = bytesWritten;
 	}
 
+	public Long getOpenFiles() {
+		return openFiles;
+	}
+
+	public void setOpenFiles(Long openFiles) {
+		this.openFiles = openFiles;
+	}
+
+	public Double getProcessCpuLoadCumulative() {
+		return processCpuLoadCumulative;
+	}
+
+	public void setProcessCpuLoadCumulative(Double processCpuLoadCumulative) {
+		this.processCpuLoadCumulative = processCpuLoadCumulative;
+	}
+
+	public Integer getBitness() {
+		return bitness;
+	}
+
+	public void setBitness(Integer bitness) {
+		this.bitness = bitness;
+	}
+
+	public Long getAffinityMask() {
+		return affinityMask;
+	}
+
+	public void setAffinityMask(Long affinityMask) {
+		this.affinityMask = affinityMask;
+	}
+
+	public Boolean getUpdateAttributes() {
+		return updateAttributes;
+	}
+
+	public void setUpdateAttributes(Boolean updateAttributes) {
+		this.updateAttributes = updateAttributes;
+	}
+
+	public List<OSThread> getThreadDetails() {
+		return threadDetails;
+	}
+
+	public void setThreadDetails(List<OSThread> threadDetails) {
+		this.threadDetails = threadDetails;
+	}
+
+	public Long getMinorFaults() {
+		return minorFaults;
+	}
+
+	public void setMinorFaults(Long minorFaults) {
+		this.minorFaults = minorFaults;
+	}
+
+	public Long getMajorFaults() {
+		return majorFaults;
+	}
+
+	public void setMajorFaults(Long majorFaults) {
+		this.majorFaults = majorFaults;
+	}
 }
