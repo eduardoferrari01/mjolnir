@@ -1,0 +1,38 @@
+{
+  "tcpv4Stats" : {
+    "connectionsEstablished" : 0,
+    "connectionsActive" : 0,
+    "connectionsPassive" : 0,
+    "connectionFailures" : 0,
+    "connectionsReset" : 0,
+    "segmentsSent" : 0,
+    "segmentsReceived" : 0,
+    "segmentsRetransmitted" : 0,
+    "inErrors" : 0,
+    "outResets" : 0
+  },
+  "tcpv6Stats" : {
+    "connectionsEstablished" : 0,
+    "connectionsActive" : 0,
+    "connectionsPassive" : 0,
+    "connectionFailures" : 0,
+    "connectionsReset" : 0,
+    "segmentsSent" : 0,
+    "segmentsReceived" : 0,
+    "segmentsRetransmitted" : 0,
+    "inErrors" : 0,
+    "outResets" : 0
+  },
+  "udpv4Stats" : {
+    "datagramsSent" : 0,
+    "datagramsReceived" : 0,
+    "datagramsNoPort" : 0,
+    "datagramsReceivedErrors" : 0
+  },
+  "udpv6Stats" : {
+    "datagramsSent" : 0,
+    "datagramsReceived" : 0,
+    "datagramsNoPort" : 0,
+    "datagramsReceivedErrors" : 0
+  }
+}

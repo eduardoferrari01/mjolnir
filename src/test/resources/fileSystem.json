@@ -1,0 +1,50 @@
+{
+  "openFileDescriptors" : 22328,
+  "maxFileDescriptors" : 8223372011888875817,
+  "fileStores" : [ {
+    "name" : "/",
+    "volume" : "/dev/sda1",
+    "label" : "/",
+    "mount" : "/",
+    "options" : "rw,noatime,discard",
+    "uuid" : "edc3314c-1403-45w1-9et4-c9ao746d29e1",
+    "logicalVolume" : "",
+    "description" : "Local Disk",
+    "freeSpace" : 8723048168,
+    "usableSpace" : 4028063699,
+    "totalSpace" : 90014981299,
+    "freeInodes" : 1563356,
+    "totalInodes" : 6660672,
+    "type" : "ext4"
+  }, {
+    "name" : "tmpfs",
+    "volume" : "tmpfs",
+    "label" : "tmpfs",
+    "mount" : "/tmp",
+    "options" : "rw,noatime,inode64",
+    "uuid" : "",
+    "logicalVolume" : "",
+    "description" : "Ram Disk",
+    "freeSpace" : 4966746625,
+    "usableSpace" : 4966136624,
+    "totalSpace" : 4118134464,
+    "freeInodes" : 981167,
+    "totalInodes" : 971231,
+    "type" : "tmpfs"
+  }, {
+    "name" : "/dev/loop4",
+    "volume" : "/dev/loop4",
+    "label" : "/dev/loop4",
+    "mount" : "/var/lib/snapd/snap/core18/1932",
+    "options" : "ro,nodev,relatime",
+    "uuid" : "",
+    "logicalVolume" : "",
+    "description" : "Local Disk",
+    "freeSpace" : 0,
+    "usableSpace" : 0,
+    "totalSpace" : 58064896,
+    "freeInodes" : 0,
+    "totalInodes" : 10779,
+    "type" : "squashfs"
+  }]
+}

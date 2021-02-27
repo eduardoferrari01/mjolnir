@@ -1,0 +1,7 @@
+{
+  "domainName" : "pc-teste",
+  "ipv4DefaultGateway" : "",
+  "ipv6DefaultGateway" : "",
+  "hostName" : "pc-teste",
+  "dnsServers" : [ "127.0.0.1" ]
+}
