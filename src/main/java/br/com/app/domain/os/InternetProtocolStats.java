@@ -8,10 +8,10 @@ public class InternetProtocolStats {
 
 	@Id
 	private String id;
-	private TcpStats tcpV4Stats;
-	private TcpStats tcpV6Stats;
-	private UdpStats udpV4Stats;
-	private UdpStats udpV6Stats;
+	private TcpStats tcpv4Stats;
+	private TcpStats tcpv6Stats;
+	private UdpStats udpv4Stats;
+	private UdpStats udpv6Stats;
 
 	public String getId() {
 		return id;
@@ -21,37 +21,35 @@ public class InternetProtocolStats {
 		this.id = id;
 	}
 
-	public TcpStats getTcpV4Stats() {
-		return tcpV4Stats;
+	public TcpStats getTcpv4Stats() {
+		return tcpv4Stats;
 	}
 
-	public void setTcpV4Stats(TcpStats tcpV4Stats) {
-		this.tcpV4Stats = tcpV4Stats;
+	public void setTcpv4Stats(TcpStats tcpv4Stats) {
+		this.tcpv4Stats = tcpv4Stats;
 	}
 
-	public TcpStats getTcpV6Stats() {
-		return tcpV6Stats;
+	public TcpStats getTcpv6Stats() {
+		return tcpv6Stats;
 	}
 
-	public void setTcpV6Stats(TcpStats tcpV6Stats) {
-		this.tcpV6Stats = tcpV6Stats;
+	public void setTcpv6Stats(TcpStats tcpv6Stats) {
+		this.tcpv6Stats = tcpv6Stats;
 	}
 
-	public UdpStats getUdpV4Stats() {
-		return udpV4Stats;
+	public UdpStats getUdpv4Stats() {
+		return udpv4Stats;
 	}
 
-	public void setUdpV4Stats(UdpStats udpV4Stats) {
-		this.udpV4Stats = udpV4Stats;
+	public void setUdpv4Stats(UdpStats udpv4Stats) {
+		this.udpv4Stats = udpv4Stats;
 	}
 
-	public UdpStats getUdpV6Stats() {
-		return udpV6Stats;
+	public UdpStats getUdpv6Stats() {
+		return udpv6Stats;
 	}
 
-	public void setUdpV6Stats(UdpStats udpV6Stats) {
-		this.udpV6Stats = udpV6Stats;
+	public void setUdpv6Stats(UdpStats udpv6Stats) {
+		this.udpv6Stats = udpv6Stats;
 	}
-	
-	
 }
