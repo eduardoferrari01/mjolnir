@@ -5,11 +5,8 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
 public class OSProcess {
 	
-	@Id
-	private String id;
 	private String name;
 	private String path;
 	private String commandLine;
@@ -42,14 +39,6 @@ public class OSProcess {
 	
 	public enum State {
 		NEW, RUNNING, SLEEPING, WAITING, ZOMBIE, STOPPED, OTHER
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public String getName() {
