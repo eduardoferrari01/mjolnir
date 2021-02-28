@@ -1,14 +1,11 @@
 package br.com.app.builder.hardware;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import br.com.app.domain.ColetaResultado;
+import br.com.app.domain.builder.hardware.CentralProcessorBuilder;
 import br.com.app.domain.builder.hardware.ComputerSystemBuilder;
 import br.com.app.domain.builder.hardware.DiskStoresBuilder;
 import br.com.app.domain.builder.hardware.DisplaysBuilder;
@@ -16,8 +13,8 @@ import br.com.app.domain.builder.hardware.GraphicsCardsBuilder;
 import br.com.app.domain.builder.hardware.MemoryBuilder;
 import br.com.app.domain.builder.hardware.NetworkIFBuilder;
 import br.com.app.domain.builder.hardware.PowerSourcesBuilder;
-import br.com.app.domain.builder.hardware.CentralProcessorBuilder;
 import br.com.app.domain.builder.hardware.SensorBuilder;
+import br.com.app.domain.hardware.CentralProcessor;
 import br.com.app.domain.hardware.ComputerSystem;
 import br.com.app.domain.hardware.Disks;
 import br.com.app.domain.hardware.Displays;
@@ -25,25 +22,26 @@ import br.com.app.domain.hardware.GraphicsCards;
 import br.com.app.domain.hardware.Memory;
 import br.com.app.domain.hardware.NetworkIF;
 import br.com.app.domain.hardware.PowerSources;
-import br.com.app.domain.hardware.CentralProcessor;
 import br.com.app.domain.hardware.Sensor;
+import br.com.app.util.ColetaResultadoTestBuilder;
+import br.com.app.util.LoadFileHardwareJson;
 
 public class BuilderHardwareTest {
 
-	private final String path = "src/test/resources/";
 	private static ColetaResultado coletaResultado;
+	private static LoadFileHardwareJson loadFileHardwareJson;
 	
 	@BeforeAll
 	public static void setup() {
-		coletaResultado = new ColetaResultado();
-		coletaResultado.setId("4aa6c0e7255c3b89987960d9097b40448079b48e0b51aa3160c486b2da7ff1cd");
+
+		coletaResultado = new ColetaResultadoTestBuilder().builder();
+		loadFileHardwareJson = new LoadFileHardwareJson();
 	}
 	
 	@Test
-	public void deveRetornaUmComputerSystem() throws IOException {
+	public void deveRetornaUmComputerSystem() {
 
-		String json = Files.readString(Paths.get(path+"computerSystem.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileHardwareJson.loadComputerSystem());
 		ComputerSystem computerSystem = new ComputerSystemBuilder(coletaResultado).builder();
 		
 		Assertions.assertNotNull(computerSystem);
@@ -52,10 +50,9 @@ public class BuilderHardwareTest {
 	}
 	
 	@Test
-	public void deveRetornaUmDisks() throws IOException {
+	public void deveRetornaUmDisks() {
 
-		String json = Files.readString(Paths.get(path+"disks.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileHardwareJson.loadDisks());
 		Disks disks = new DiskStoresBuilder(coletaResultado).builder();
 		
 		Assertions.assertNotNull(disks);
@@ -65,10 +62,9 @@ public class BuilderHardwareTest {
 	}
 	
 	@Test
-	public void deveRetornaUmDisplays() throws IOException {
+	public void deveRetornaUmDisplays() {
 		
-		String json = Files.readString(Paths.get(path+"displays.json")).trim();
-		coletaResultado.setJson(json);
+	    coletaResultado.setJson(loadFileHardwareJson.loadDisplays());
 		Displays displays = new DisplaysBuilder(coletaResultado).builder();
 		
 		Assertions.assertNotNull(displays);
@@ -79,10 +75,9 @@ public class BuilderHardwareTest {
 	}
 	
 	@Test
-	public void deveRetornarUmGraphicsCards()  throws IOException{
+	public void deveRetornarUmGraphicsCards(){
 	
-		String json = Files.readString(Paths.get(path+"graphicsCards.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileHardwareJson.loadGraphicsCards());
 		GraphicsCards graphicsCards = new GraphicsCardsBuilder(coletaResultado).builder();
 		
 		Assertions.assertNotNull(graphicsCards);
@@ -92,10 +87,9 @@ public class BuilderHardwareTest {
 	}
 	
 	@Test
-	public void deveRetornarUmMemory() throws IOException{
+	public void deveRetornarUmMemory(){
 		
-		String json = Files.readString(Paths.get(path+"memory.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileHardwareJson.loadMemory());
 		Memory memory = new MemoryBuilder(coletaResultado).builder();
 		
 		Assertions.assertNotNull(memory);
@@ -105,10 +99,9 @@ public class BuilderHardwareTest {
 	}
 	
 	@Test
-	public void deveRetornarUmNetworkIF()  throws IOException{
+	public void deveRetornarUmNetworkIF(){
 	
-		String json = Files.readString(Paths.get(path+"networkIF.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileHardwareJson.loadNetworkIF());
 		NetworkIF networkIF = new NetworkIFBuilder(coletaResultado).builder();
 		
 		Assertions.assertNotNull(networkIF);
@@ -118,10 +111,9 @@ public class BuilderHardwareTest {
 	}
 	
 	@Test
-	public void deveRetornarUmPowerSources()  throws IOException{
+	public void deveRetornarUmPowerSources(){
 	
-		String json = Files.readString(Paths.get(path+"powerSources.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileHardwareJson.loadPowerSources());
 		PowerSources powerSources = new PowerSourcesBuilder(coletaResultado).builder();
 		
 		Assertions.assertNotNull(powerSources);
@@ -131,10 +123,9 @@ public class BuilderHardwareTest {
 	}
 	
 	@Test
-	public void deveRetornarUmCentralProcessor() throws IOException{
+	public void deveRetornarUmCentralProcessor(){
 		
-		String json = Files.readString(Paths.get(path+"processor.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileHardwareJson.loadProcessor());
 		CentralProcessor processor = new CentralProcessorBuilder(coletaResultado).builder();
 		
 		Assertions.assertNotNull(processor);
@@ -144,10 +135,9 @@ public class BuilderHardwareTest {
 	}
 	
 	@Test
-	public void deveRetornarUmSensor() throws IOException{
+	public void deveRetornarUmSensor(){
 		
-		String json = Files.readString(Paths.get(path+"sensor.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileHardwareJson.loadSensor());
 		Sensor sensor = new SensorBuilder(coletaResultado).builder();
 		
 		Assertions.assertNotNull(sensor);
