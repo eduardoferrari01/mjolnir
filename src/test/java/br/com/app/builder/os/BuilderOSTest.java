@@ -25,23 +25,26 @@ import br.com.app.domain.os.OperatingSystem;
 import br.com.app.domain.os.Processe;
 import br.com.app.domain.os.Service;
 import br.com.app.domain.os.Sessions;
+import br.com.app.util.ColetaResultadoTestBuilder;
+import br.com.app.util.LoadFileOSJson;
 
 public class BuilderOSTest {
 
-	private final String path = "src/test/resources/";
 	private static ColetaResultado coletaResultado;
-
+	private static LoadFileOSJson loadFileOSJson;
+	
+	
 	@BeforeAll
 	public static void setup() {
-		coletaResultado = new ColetaResultado();
-		coletaResultado.setId("4aa6c0e7255c3b89987960d9097b40448079b48e0b51aa3160c486b2da7ff1cd");
+		coletaResultado = new ColetaResultadoTestBuilder().builder();
+		loadFileOSJson = new LoadFileOSJson();
+		
 	}
 
 	@Test
 	public void deveRetornarUmFileSystem() throws IOException {
 
-		String json = Files.readString(Paths.get(path + "fileSystem.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileOSJson.loadFileSystem());
 		FileSystem fileSystem = new FileSystemBuilder(coletaResultado).builder();
 
 		Assertions.assertNotNull(fileSystem);
@@ -54,8 +57,7 @@ public class BuilderOSTest {
 	@Test
 	public void deveRetornarUmInternetProtocolStats() throws IOException {
 
-		String json = Files.readString(Paths.get(path + "internetProtocolStats.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileOSJson.loadInternetProtocolStats());
 		InternetProtocolStats internetProtocolStats = new InternetProtocolStatsBuilder(coletaResultado).builder();
 
 		Assertions.assertNotNull(internetProtocolStats);
@@ -67,8 +69,7 @@ public class BuilderOSTest {
 	@Test
 	public void deveRetornarUmNetworkParams() throws IOException {
 
-		String json = Files.readString(Paths.get(path + "networkParams.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileOSJson.loadNetworkParams());
 		NetworkParams networkParams = new NetworkParamsBuilder(coletaResultado).builder();
 
 		Assertions.assertNotNull(networkParams);
@@ -81,8 +82,7 @@ public class BuilderOSTest {
 	@Test
 	public void deveRetornarUmOperatingSystem() throws IOException {
 
-		String json = Files.readString(Paths.get(path + "operatingSystem.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileOSJson.loadOperatingSystem());
 		OperatingSystem operatingSystem = new OperatingSystemBuilder(coletaResultado).builder();
 
 		Assertions.assertNotNull(operatingSystem);
@@ -93,8 +93,7 @@ public class BuilderOSTest {
 	@Test
 	public void deveRetornarUmProcess() throws IOException {
 
-		String json = Files.readString(Paths.get(path + "osProcess.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileOSJson.loadOSProcess());
 		Processe processe = new ProcesseBuilder(coletaResultado).builder();
 
 		Assertions.assertNotNull(processe);
@@ -106,8 +105,7 @@ public class BuilderOSTest {
 	@Test
 	public void deveRetornarUmService() throws IOException {
 
-		String json = Files.readString(Paths.get(path + "osService.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileOSJson.loadOSService());
 		Service service = new ServiceBuilder(coletaResultado).builder();
 
 		Assertions.assertNotNull(service);
@@ -119,8 +117,7 @@ public class BuilderOSTest {
 	@Test
 	public void deveRetornarUmSession() throws IOException {
 
-		String json = Files.readString(Paths.get(path + "osSession.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileOSJson.loadOSSession());
 		Sessions sessions = new SessionsBuilder(coletaResultado).builder();
 
 		Assertions.assertNotNull(sessions);
@@ -132,8 +129,7 @@ public class BuilderOSTest {
 	@Test
 	public void deveRetornarUmOSVersionInfo() throws IOException {
 
-		String json = Files.readString(Paths.get(path + "osVersionInfo.json")).trim();
-		coletaResultado.setJson(json);
+		coletaResultado.setJson(loadFileOSJson.loadOSVersionInfo());
 		OSVersionInfo osVersionInfo = new OSVersionInfoBuilder(coletaResultado).builder();
 
 		Assertions.assertNotNull(osVersionInfo);
