@@ -32,7 +32,7 @@ public class LoadFileOSJson extends LoadFileJsonAbstract{
 	}
 	
 	public String loadOSSession() {
-		return readFile("osSession.json ");
+		return readFile("osSession.json");
 	}
 	
 	public String loadOSVersionInfo() {
