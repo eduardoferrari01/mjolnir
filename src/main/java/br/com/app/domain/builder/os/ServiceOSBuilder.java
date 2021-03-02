@@ -4,21 +4,21 @@ import java.util.List;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.os.OSService;
-import br.com.app.domain.os.Service;
+import br.com.app.domain.os.ServiceOS;
 import br.com.app.util.EntityBuilder;
 
-public class ServiceBuilder {
+public class ServiceOSBuilder {
 
 	private ColetaResultado coletaResultado;
 
-	public ServiceBuilder(ColetaResultado coletaResultado) {
+	public ServiceOSBuilder(ColetaResultado coletaResultado) {
 
 		this.coletaResultado = coletaResultado;
 	}
 	
-	public Service builder() {
+	public ServiceOS builder() {
 
-		Service service = new Service();
+		ServiceOS service = new ServiceOS();
 		service.setId(coletaResultado.getId());
 		List<OSService> osService = new EntityBuilder().collectionBuilder(coletaResultado.getJson(), OSService.class);
 		service.setOsService(osService);

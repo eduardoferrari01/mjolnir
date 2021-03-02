@@ -11,7 +11,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import br.com.app.domain.ColetaResultado;
-import br.com.app.domain.os.Service;
+import br.com.app.domain.os.ServiceOS;
 import br.com.app.repository.os.ServiceOSRepository;
 import br.com.app.util.ColetaResultadoTestBuilder;
 import br.com.app.util.LoadFileOSJson;
@@ -38,6 +38,6 @@ public class ServiceOSTest {
 	public void deveSalvarUmServiceOS() {
 
 		serviceOSService.save(coletaResultado);
-		verify(serviceOSRepository).save(Mockito.any(Service.class));
+		verify(serviceOSRepository).save(Mockito.any(ServiceOS.class));
 	}
 }

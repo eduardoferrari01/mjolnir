@@ -15,7 +15,7 @@ import br.com.app.domain.builder.os.NetworkParamsBuilder;
 import br.com.app.domain.builder.os.OSVersionInfoBuilder;
 import br.com.app.domain.builder.os.OperatingSystemBuilder;
 import br.com.app.domain.builder.os.ProcesseBuilder;
-import br.com.app.domain.builder.os.ServiceBuilder;
+import br.com.app.domain.builder.os.ServiceOSBuilder;
 import br.com.app.domain.builder.os.SessionsBuilder;
 import br.com.app.domain.os.FileSystem;
 import br.com.app.domain.os.InternetProtocolStats;
@@ -23,7 +23,7 @@ import br.com.app.domain.os.NetworkParams;
 import br.com.app.domain.os.OSVersionInfo;
 import br.com.app.domain.os.OperatingSystem;
 import br.com.app.domain.os.Processe;
-import br.com.app.domain.os.Service;
+import br.com.app.domain.os.ServiceOS;
 import br.com.app.domain.os.Sessions;
 import br.com.app.util.ColetaResultadoTestBuilder;
 import br.com.app.util.LoadFileOSJson;
@@ -106,7 +106,7 @@ public class BuilderOSTest {
 	public void deveRetornarUmService() throws IOException {
 
 		coletaResultado.setJson(loadFileOSJson.loadOSService());
-		Service service = new ServiceBuilder(coletaResultado).builder();
+		ServiceOS service = new ServiceOSBuilder(coletaResultado).builder();
 
 		Assertions.assertNotNull(service);
 		Assertions.assertNotNull(service.getId());
