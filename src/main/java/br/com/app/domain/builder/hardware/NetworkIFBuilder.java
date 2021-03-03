@@ -5,7 +5,7 @@ import java.util.List;
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.hardware.Network;
 import br.com.app.domain.hardware.NetworkIF;
-import br.com.app.util.EntityBuilder;
+import br.com.app.util.DomainBuilder;
 
 public class NetworkIFBuilder {
 
@@ -20,7 +20,7 @@ public class NetworkIFBuilder {
 
 		NetworkIF networkIF = new NetworkIF();
 		networkIF.setId(coletaResultado.getId());
-		List<Network> network = new EntityBuilder().collectionBuilder(coletaResultado.getJson(), Network.class);
+		List<Network> network = new DomainBuilder().collectionBuilder(coletaResultado.getJson(), Network.class);
 		networkIF.setNetworks(network);
 		return networkIF;
 	}

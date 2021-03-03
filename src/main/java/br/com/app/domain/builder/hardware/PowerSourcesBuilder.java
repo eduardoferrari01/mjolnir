@@ -5,7 +5,7 @@ import java.util.List;
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.hardware.PowerSource;
 import br.com.app.domain.hardware.PowerSources;
-import br.com.app.util.EntityBuilder;
+import br.com.app.util.DomainBuilder;
 
 public class PowerSourcesBuilder {
 
@@ -20,7 +20,7 @@ public class PowerSourcesBuilder {
 
 		PowerSources powerSources = new PowerSources();
 		powerSources.setId(coletaResultado.getId());
-		List<PowerSource> powerSource = new EntityBuilder().collectionBuilder(coletaResultado.getJson(), PowerSource.class);
+		List<PowerSource> powerSource = new DomainBuilder().collectionBuilder(coletaResultado.getJson(), PowerSource.class);
 		powerSources.setPowerSources(powerSource);
 		return powerSources;
 	}

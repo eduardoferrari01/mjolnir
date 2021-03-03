@@ -12,12 +12,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
-public class EntityBuilder {
+public class DomainBuilder {
 
-	private Logger logger = LoggerFactory.getLogger(EntityBuilder.class);
+	private Logger logger = LoggerFactory.getLogger(DomainBuilder.class);
 	private ObjectMapper objectMapper;
 
-	public EntityBuilder() {
+	public DomainBuilder() {
 		this.objectMapper = new ObjectMapper();
 		this.objectMapper.registerModule(new JavaTimeModule());
 		this.objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);

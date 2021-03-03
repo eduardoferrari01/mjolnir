@@ -2,7 +2,7 @@ package br.com.app.domain.builder.os;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.os.OSVersionInfo;
-import br.com.app.util.EntityBuilder;
+import br.com.app.util.DomainBuilder;
 
 public class OSVersionInfoBuilder {
 
@@ -15,7 +15,7 @@ public class OSVersionInfoBuilder {
 	
 	public OSVersionInfo builder() {
 
-		OSVersionInfo osVersionInfo = new EntityBuilder().builder(coletaResultado.getJson(), OSVersionInfo.class);
+		OSVersionInfo osVersionInfo = new DomainBuilder().builder(coletaResultado.getJson(), OSVersionInfo.class);
 		osVersionInfo.setId(coletaResultado.getId());
 		return osVersionInfo;
 	}

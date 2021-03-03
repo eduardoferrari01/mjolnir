@@ -2,7 +2,7 @@ package br.com.app.domain.builder.hardware;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.hardware.CentralProcessor;
-import br.com.app.util.EntityBuilder;
+import br.com.app.util.DomainBuilder;
 
 public class CentralProcessorBuilder {
 
@@ -15,7 +15,7 @@ public class CentralProcessorBuilder {
 
 	public CentralProcessor builder() {
 
-		CentralProcessor processor = new EntityBuilder().builder(coletaResultado.getJson(), CentralProcessor.class);
+		CentralProcessor processor = new DomainBuilder().builder(coletaResultado.getJson(), CentralProcessor.class);
 		processor.setId(coletaResultado.getId());
 		return processor;
 	}

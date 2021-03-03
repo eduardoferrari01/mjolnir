@@ -5,7 +5,7 @@ import java.util.List;
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.os.OSSession;
 import br.com.app.domain.os.Sessions;
-import br.com.app.util.EntityBuilder;
+import br.com.app.util.DomainBuilder;
 
 public class SessionsBuilder {
 
@@ -20,7 +20,7 @@ public class SessionsBuilder {
 
 		Sessions sessions = new Sessions();
 		sessions.setId(coletaResultado.getId());
-		List<OSSession> osSession = new EntityBuilder().collectionBuilder(coletaResultado.getJson(), OSSession.class);
+		List<OSSession> osSession = new DomainBuilder().collectionBuilder(coletaResultado.getJson(), OSSession.class);
 		sessions.setOsSession(osSession);
 		return sessions;
 	}

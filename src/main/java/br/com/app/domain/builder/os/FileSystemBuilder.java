@@ -2,7 +2,7 @@ package br.com.app.domain.builder.os;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.os.FileSystem;
-import br.com.app.util.EntityBuilder;
+import br.com.app.util.DomainBuilder;
 
 public class FileSystemBuilder  {
 
@@ -14,7 +14,7 @@ public class FileSystemBuilder  {
 	}
 	
 	public FileSystem builder() {
-		FileSystem fileSystem = new EntityBuilder().builder(coletaResultado.getJson(), FileSystem.class);
+		FileSystem fileSystem = new DomainBuilder().builder(coletaResultado.getJson(), FileSystem.class);
 		fileSystem.setId(coletaResultado.getId());
 		return fileSystem;
 	}

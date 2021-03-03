@@ -2,7 +2,7 @@ package br.com.app.domain.builder.os;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.os.OperatingSystem;
-import br.com.app.util.EntityBuilder;
+import br.com.app.util.DomainBuilder;
 
 public class OperatingSystemBuilder {
 
@@ -15,7 +15,7 @@ public class OperatingSystemBuilder {
 	
 	public OperatingSystem builder() {
 
-		OperatingSystem operatingSystem = new EntityBuilder().builder(coletaResultado.getJson(), OperatingSystem.class);
+		OperatingSystem operatingSystem = new DomainBuilder().builder(coletaResultado.getJson(), OperatingSystem.class);
 		operatingSystem.setId(coletaResultado.getId());
 		return operatingSystem;
 	}

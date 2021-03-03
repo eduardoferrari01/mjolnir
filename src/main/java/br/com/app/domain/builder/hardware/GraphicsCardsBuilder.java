@@ -5,7 +5,7 @@ import java.util.List;
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.hardware.GraphicsCard;
 import br.com.app.domain.hardware.GraphicsCards;
-import br.com.app.util.EntityBuilder;
+import br.com.app.util.DomainBuilder;
 
 public class GraphicsCardsBuilder {
 
@@ -20,7 +20,7 @@ public class GraphicsCardsBuilder {
 
 		GraphicsCards graphicsCards = new GraphicsCards();
 		graphicsCards.setId(coletaResultado.getId());
-		List<GraphicsCard> graphicsCard = new EntityBuilder().collectionBuilder(coletaResultado.getJson(), GraphicsCard.class);
+		List<GraphicsCard> graphicsCard = new DomainBuilder().collectionBuilder(coletaResultado.getJson(), GraphicsCard.class);
 		graphicsCards.setGraphicsCards(graphicsCard);
 		return graphicsCards;
 	}

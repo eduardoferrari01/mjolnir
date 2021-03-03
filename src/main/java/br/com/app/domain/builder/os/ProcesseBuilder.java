@@ -5,7 +5,7 @@ import java.util.List;
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.os.OSProcess;
 import br.com.app.domain.os.Processe;
-import br.com.app.util.EntityBuilder;
+import br.com.app.util.DomainBuilder;
 
 public class ProcesseBuilder {
 
@@ -20,7 +20,7 @@ public class ProcesseBuilder {
 
 		Processe processe = new Processe();
 		processe.setId(coletaResultado.getId());
-		List<OSProcess> osProcess = new EntityBuilder().collectionBuilder(coletaResultado.getJson(), OSProcess.class);
+		List<OSProcess> osProcess = new DomainBuilder().collectionBuilder(coletaResultado.getJson(), OSProcess.class);
 		processe.setOsProcess(osProcess);
 		return processe;
 	}

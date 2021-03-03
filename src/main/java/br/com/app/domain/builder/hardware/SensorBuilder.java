@@ -2,7 +2,7 @@ package br.com.app.domain.builder.hardware;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.hardware.Sensor;
-import br.com.app.util.EntityBuilder;
+import br.com.app.util.DomainBuilder;
 
 public class SensorBuilder {
 
@@ -15,7 +15,7 @@ public class SensorBuilder {
 
 	public Sensor builder() {
 
-		Sensor sensor = new EntityBuilder().builder(coletaResultado.getJson(), Sensor.class);
+		Sensor sensor = new DomainBuilder().builder(coletaResultado.getJson(), Sensor.class);
 		sensor.setId(coletaResultado.getId());
 		return sensor;
 	}

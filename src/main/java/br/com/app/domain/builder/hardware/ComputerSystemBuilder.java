@@ -2,7 +2,7 @@ package br.com.app.domain.builder.hardware;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.hardware.ComputerSystem;
-import br.com.app.util.EntityBuilder;
+import br.com.app.util.DomainBuilder;
 
 public class ComputerSystemBuilder {
 
@@ -15,7 +15,7 @@ public class ComputerSystemBuilder {
 
 	public ComputerSystem builder() {
 
-		ComputerSystem computerSystem = new EntityBuilder().builder(coletaResultado.getJson(), ComputerSystem.class);
+		ComputerSystem computerSystem = new DomainBuilder().builder(coletaResultado.getJson(), ComputerSystem.class);
 		computerSystem.setId(coletaResultado.getId());
 		return computerSystem;
 	}
