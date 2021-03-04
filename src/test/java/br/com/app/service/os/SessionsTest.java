@@ -13,8 +13,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.os.Sessions;
 import br.com.app.repository.os.SessionsRepository;
-import br.com.app.util.ColetaResultadoTestBuilder;
-import br.com.app.util.LoadFileOSJson;
+import br.com.app.test.builder.ColetaResultadoTestDataBuilder;
+import br.com.app.test.data.loadfile.LoadFileOSJson;
 
 @ExtendWith(MockitoExtension.class)
 public class SessionsTest {
@@ -30,7 +30,7 @@ public class SessionsTest {
 	public static void setup()  {
 
 		loadFileOSJson = new LoadFileOSJson();
-		coletaResultado = new ColetaResultadoTestBuilder().setJson(loadFileOSJson.loadOSSession())
+		coletaResultado = new ColetaResultadoTestDataBuilder().setJson(loadFileOSJson.loadOSSession())
 				.builder();
 	}
 	

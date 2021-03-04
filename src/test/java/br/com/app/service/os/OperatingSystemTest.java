@@ -13,8 +13,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.os.OperatingSystem;
 import br.com.app.repository.os.OperatingSystemRepository;
-import br.com.app.util.ColetaResultadoTestBuilder;
-import br.com.app.util.LoadFileOSJson;
+import br.com.app.test.builder.ColetaResultadoTestDataBuilder;
+import br.com.app.test.data.loadfile.LoadFileOSJson;
 
 @ExtendWith(MockitoExtension.class)
 public class OperatingSystemTest {
@@ -30,7 +30,7 @@ public class OperatingSystemTest {
 	public static void setup()  {
 
 		loadFileOSJson = new LoadFileOSJson();
-		coletaResultado = new ColetaResultadoTestBuilder().setJson(loadFileOSJson.loadOperatingSystem())
+		coletaResultado = new ColetaResultadoTestDataBuilder().setJson(loadFileOSJson.loadOperatingSystem())
 				.builder();
 	}
 	

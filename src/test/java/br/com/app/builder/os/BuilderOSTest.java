@@ -25,8 +25,8 @@ import br.com.app.domain.os.OperatingSystem;
 import br.com.app.domain.os.Processe;
 import br.com.app.domain.os.ServiceOS;
 import br.com.app.domain.os.Sessions;
-import br.com.app.util.ColetaResultadoTestBuilder;
-import br.com.app.util.LoadFileOSJson;
+import br.com.app.test.builder.ColetaResultadoTestDataBuilder;
+import br.com.app.test.data.loadfile.LoadFileOSJson;
 
 public class BuilderOSTest {
 
@@ -36,7 +36,7 @@ public class BuilderOSTest {
 	
 	@BeforeAll
 	public static void setup() {
-		coletaResultado = new ColetaResultadoTestBuilder().builder();
+		coletaResultado = new ColetaResultadoTestDataBuilder().builder();
 		loadFileOSJson = new LoadFileOSJson();
 		
 	}

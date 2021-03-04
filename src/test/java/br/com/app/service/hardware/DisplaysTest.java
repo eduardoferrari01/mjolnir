@@ -15,8 +15,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.hardware.Displays;
 import br.com.app.repository.hardware.DisplaysRepository;
-import br.com.app.util.ColetaResultadoTestBuilder;
-import br.com.app.util.LoadFileHardwareJson;
+import br.com.app.test.builder.ColetaResultadoTestDataBuilder;
+import br.com.app.test.data.loadfile.LoadFileHardwareJson;
 
 @ExtendWith(MockitoExtension.class)
 public class DisplaysTest {
@@ -31,7 +31,7 @@ public class DisplaysTest {
 	public static void setup() {
 		
 		LoadFileHardwareJson loadJson = new LoadFileHardwareJson();
-		coletaResultado = new ColetaResultadoTestBuilder().setJson(loadJson.loadDisplays()).builder();
+		coletaResultado = new ColetaResultadoTestDataBuilder().setJson(loadJson.loadDisplays()).builder();
 	}
 	
 	@Test

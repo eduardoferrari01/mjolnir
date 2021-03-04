@@ -1,4 +1,4 @@
-package br.com.app.util;
+package br.com.app.test.data.loadfile;
 
 public class LoadFileHardwareJson extends LoadFileJsonAbstract{
 

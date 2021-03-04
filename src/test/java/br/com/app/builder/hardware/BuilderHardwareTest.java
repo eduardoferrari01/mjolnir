@@ -23,8 +23,8 @@ import br.com.app.domain.hardware.Memory;
 import br.com.app.domain.hardware.NetworkIF;
 import br.com.app.domain.hardware.PowerSources;
 import br.com.app.domain.hardware.Sensor;
-import br.com.app.util.ColetaResultadoTestBuilder;
-import br.com.app.util.LoadFileHardwareJson;
+import br.com.app.test.builder.ColetaResultadoTestDataBuilder;
+import br.com.app.test.data.loadfile.LoadFileHardwareJson;
 
 public class BuilderHardwareTest {
 
@@ -34,7 +34,7 @@ public class BuilderHardwareTest {
 	@BeforeAll
 	public static void setup() {
 
-		coletaResultado = new ColetaResultadoTestBuilder().builder();
+		coletaResultado = new ColetaResultadoTestDataBuilder().builder();
 		loadFileHardwareJson = new LoadFileHardwareJson();
 	}
 	

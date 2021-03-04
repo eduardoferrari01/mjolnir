@@ -16,8 +16,8 @@ import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.hardware.GraphicsCards;
 import br.com.app.domain.hardware.Memory;
 import br.com.app.repository.hardware.MemoryRepository;
-import br.com.app.util.ColetaResultadoTestBuilder;
-import br.com.app.util.LoadFileHardwareJson;
+import br.com.app.test.builder.ColetaResultadoTestDataBuilder;
+import br.com.app.test.data.loadfile.LoadFileHardwareJson;
 
 @ExtendWith(MockitoExtension.class)
 public class MemoryTest {
@@ -32,7 +32,7 @@ public class MemoryTest {
 	public static void setup() {
 		
 		LoadFileHardwareJson loadJson = new LoadFileHardwareJson();
-		coletaResultado = new ColetaResultadoTestBuilder().setJson(loadJson.loadMemory()).builder();
+		coletaResultado = new ColetaResultadoTestDataBuilder().setJson(loadJson.loadMemory()).builder();
 	}
 	
 	@Test

@@ -1,18 +1,18 @@
-package br.com.app.util;
+package br.com.app.test.builder;
 
 import br.com.app.domain.ColetaResultado;
 
-public class ColetaResultadoTestBuilder {
+public class ColetaResultadoTestDataBuilder {
 
 	private String id;
 	private String json;
 	
-	public ColetaResultadoTestBuilder setId(String id) {
+	public ColetaResultadoTestDataBuilder setId(String id) {
 		this.id = id;
 		return this;
 	}
 	
-	public ColetaResultadoTestBuilder setJson(String json) {
+	public ColetaResultadoTestDataBuilder setJson(String json) {
 		
 		this.json = json;
 		return this;
