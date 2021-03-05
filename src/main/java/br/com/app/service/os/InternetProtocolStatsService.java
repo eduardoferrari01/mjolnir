@@ -1,5 +1,6 @@
 package br.com.app.service.os;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.app.domain.ColetaResultado;
@@ -10,6 +11,7 @@ import br.com.app.repository.os.InternetProtocolStatsRepository;
 @Service
 public class InternetProtocolStatsService {
 
+	@Autowired
 	private InternetProtocolStatsRepository internetProtocolStatsRepository;
 	
 	public void save(ColetaResultado coletaResultado) {
