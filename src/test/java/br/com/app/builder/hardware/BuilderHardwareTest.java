@@ -1,5 +1,7 @@
 package br.com.app.builder.hardware;
 
+import java.time.LocalDate;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -21,6 +23,7 @@ import br.com.app.domain.hardware.Displays;
 import br.com.app.domain.hardware.GraphicsCards;
 import br.com.app.domain.hardware.Memory;
 import br.com.app.domain.hardware.NetworkIF;
+import br.com.app.domain.hardware.PowerSource;
 import br.com.app.domain.hardware.PowerSources;
 import br.com.app.domain.hardware.Sensor;
 import br.com.app.test.builder.ColetaResultadoTestDataBuilder;
@@ -118,8 +121,31 @@ public class BuilderHardwareTest {
 		
 		Assertions.assertNotNull(powerSources);
 		Assertions.assertNotNull(powerSources.getId());
-		Assertions.assertFalse(powerSources.getId().isEmpty());
+		Assertions.assertEquals(coletaResultado.getId(), powerSources.getId());
 		Assertions.assertFalse(powerSources.getPowerSources().isEmpty());
+		
+		PowerSource powerSource = powerSources.getPowerSources().get(0);
+		Assertions.assertEquals(powerSource.getName(), "hidpp_battery_0");
+		Assertions.assertEquals(powerSource.getDeviceName(), "Wireless Keyboard");
+		Assertions.assertEquals(powerSource.getRemainingCapacityPercent(), -1.0);
+		Assertions.assertEquals(powerSource.getTimeRemainingEstimated(), -1.0);
+		Assertions.assertEquals(powerSource.getTimeRemainingInstant(), -1.0);
+		Assertions.assertEquals(powerSource.getPowerUsageRate(), 0.0);
+		Assertions.assertEquals(powerSource.getVoltage(), -1.0);
+		Assertions.assertEquals(powerSource.getAmperage(), 0.0);
+		Assertions.assertEquals(powerSource.getPowerOnLine(), Boolean.FALSE);
+		Assertions.assertEquals(powerSource.getCharging(), Boolean.FALSE);
+		Assertions.assertEquals(powerSource.getDischarging(), Boolean.TRUE);
+		//Assertions.assertEquals(powerSource.getCapacityUnits(), PowerSource.CapacityUnits.RELATIVE);
+		Assertions.assertEquals(powerSource.getCurrentCapacity(), -1);
+		Assertions.assertEquals(powerSource.getMaxCapacity(), -1);
+		Assertions.assertEquals(powerSource.getDesignCapacity(), -1);
+		Assertions.assertEquals(powerSource.getCycleCount(), -1);
+		Assertions.assertEquals(powerSource.getChemistry(), "unknown");
+		Assertions.assertEquals(powerSource.getManufactureDate(), LocalDate.of(2021, 02, 01));
+		Assertions.assertEquals(powerSource.getManufacturer(), "Logitech");
+		Assertions.assertEquals(powerSource.getSerialNumber(), "4023-00-00-00-00");
+		Assertions.assertEquals(powerSource.getTemperature(), 0.0);
 	}
 	
 	@Test
