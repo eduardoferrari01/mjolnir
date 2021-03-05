@@ -2,9 +2,6 @@ package br.com.app.domain.os;
 
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 public class OSProcess {
 	
 	private String name;
