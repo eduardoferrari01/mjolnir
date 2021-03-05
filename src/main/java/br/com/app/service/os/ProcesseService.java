@@ -1,12 +1,14 @@
 package br.com.app.service.os;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.builder.os.ProcesseBuilder;
 import br.com.app.domain.os.Processe;
 import br.com.app.repository.os.ProcesseRepository;
 
+@Service
 public class ProcesseService {
 
 	@Autowired
