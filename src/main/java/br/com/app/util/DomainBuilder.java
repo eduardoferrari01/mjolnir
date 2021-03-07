@@ -22,6 +22,7 @@ public class DomainBuilder {
 		this.objectMapper.registerModule(new JavaTimeModule());
 		this.objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 		this.objectMapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+		this.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 	}
 
 	public <T> T builder(String json, Class<T> valueType) {
