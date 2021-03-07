@@ -35,7 +35,7 @@ public class OSProcess {
 	private Long majorFaults;
 	
 	public enum State {
-		NEW, RUNNING, SLEEPING, WAITING, ZOMBIE, STOPPED, OTHER
+		NEW, RUNNING, SLEEPING, WAITING, ZOMBIE, STOPPED, OTHER,INVALID
 	}
 
 	public String getName() {
