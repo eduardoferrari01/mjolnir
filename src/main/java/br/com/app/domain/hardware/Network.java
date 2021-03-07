@@ -2,6 +2,8 @@ package br.com.app.domain.hardware;
 
 import java.util.List;
 
+import br.com.app.domain.enums.IfOperStatus;
+
 public class Network {
 	
 	private String name;
@@ -27,6 +29,8 @@ public class Network {
 	private Long timeStamp;
 	private Boolean knownVmMacAddr;
 	private Boolean updateAttributes;
+	private String ifAlias;
+	private IfOperStatus ifOperStatus;
 	
 	public String getName() {
 		return name;
@@ -165,5 +169,17 @@ public class Network {
 	}
 	public void setUpdateAttributes(Boolean updateAttributes) {
 		this.updateAttributes = updateAttributes;
+	}
+	public String getIfAlias() {
+		return ifAlias;
+	}
+	public void setIfAlias(String ifAlias) {
+		this.ifAlias = ifAlias;
+	}
+	public IfOperStatus getIfOperStatus() {
+		return ifOperStatus;
+	}
+	public void setIfOperStatus(IfOperStatus ifOperStatus) {
+		this.ifOperStatus = ifOperStatus;
 	}
 }
