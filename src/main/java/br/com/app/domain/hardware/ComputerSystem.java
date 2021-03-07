@@ -13,6 +13,7 @@ public class ComputerSystem {
 	private String serialNumber;
 	private Firmware firmware;
 	private Baseboard baseboard;
+	private String hardwareUUID;
 	
 	public String getId() {
 		return id;
@@ -50,11 +51,10 @@ public class ComputerSystem {
 	public void setBaseboard(Baseboard baseboard) {
 		this.baseboard = baseboard;
 	}
-	
-	@Override
-	public String toString() {
-		return "ComputerSystem [manufacturer=" + manufacturer + ", model=" + model + ", serialNumber=" + serialNumber
-				+ ", firmware=" + firmware + ", baseboard=" + baseboard + "]";
+	public String getHardwareUUID() {
+		return hardwareUUID;
 	}
-	
+	public void setHardwareUUID(String hardwareUUID) {
+		this.hardwareUUID = hardwareUUID;
+	}
 }
