@@ -20,7 +20,9 @@
   "ndisPhysicalMediumType" : 0,
   "macaddr" : "fr:01:3w:ce:51:b0",
   "name" : "veth75b58e8",
-  "displayName" : "veth75b58e8"
+  "displayName" : "veth75b58e8",
+  "ifAlias": "",
+  "ifOperStatus": "TESTING"
 }, {
   "mtu" : 1500,
   "subnetMasks" : [ 16 ],
@@ -43,7 +45,9 @@
   "ndisPhysicalMediumType" : 0,
   "macaddr" : "02:42:6f:61:ad:6c",
   "name" : "docker0",
-  "displayName" : "docker0"
+  "displayName" : "docker0",
+  "ifAlias": "",
+  "ifOperStatus": "DOWN"
 }, {
   "mtu" : 1500,
   "subnetMasks" : [ 24 ],
@@ -66,5 +70,7 @@
   "ndisPhysicalMediumType" : 0,
   "macaddr" : "00:f0:4c:68:51:df",
   "name" : "enp2s0",
-  "displayName" : "enp2s0"
+  "displayName" : "enp2s0",
+  "ifAlias": "",
+  "ifOperStatus": "UP"
 } ]

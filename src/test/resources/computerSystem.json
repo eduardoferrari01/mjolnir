@@ -14,5 +14,6 @@
   },
   "manufacturer" : "System manufacturer",
   "model" : "System Product Name (version: System Version)",
-  "serialNumber" : "unknown"
+  "serialNumber" : "unknown",
+  "hardwareUUID" : "unknown"
 } 
