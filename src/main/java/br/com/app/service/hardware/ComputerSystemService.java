@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.app.domain.ColetaResultado;
+import br.com.app.domain.NotFoundException;
 import br.com.app.domain.builder.hardware.ComputerSystemBuilder;
 import br.com.app.domain.hardware.ComputerSystem;
 import br.com.app.repository.hardware.ComputerSystemRepository;
@@ -17,8 +18,11 @@ public class ComputerSystemService {
 	public void save(ColetaResultado coletaResultado) {
 
 		ComputerSystem computerSystem = new ComputerSystemBuilder(coletaResultado).builder();
-
 		computerSystemRepository.save(computerSystem);
-
+	}
+	
+	public ComputerSystem findById(String id) throws NotFoundException {
+		
+		return computerSystemRepository.findById(id).orElseThrow(() -> new  NotFoundException()); 
 	}
 }
