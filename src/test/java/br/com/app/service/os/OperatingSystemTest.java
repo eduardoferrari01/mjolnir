@@ -57,8 +57,9 @@ public class OperatingSystemTest {
 		
 		when(operatingSystemRepository.findById(ID))
 				.thenReturn(Optional.of(new OperatingSystemBuilder(coletaResultado).builder()));
-
+		
 		OperatingSystem operatingSystemFind = operatingSystemService.findById(ID);
+		verify(operatingSystemRepository).findById(coletaResultado.getId());
 		
 		Assertions.assertEquals(operatingSystemFind, operatingSystem);
 	}
