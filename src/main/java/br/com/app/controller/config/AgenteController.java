@@ -10,27 +10,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.app.domain.ConfigAgente;
-import br.com.app.service.config.ConfigAgenteService;
+import br.com.app.domain.Agente;
+import br.com.app.service.config.AgenteService;
 
 @RestController
 @RequestMapping("/api/config")
-public class ConfigController {
+public class AgenteController {
 
 	@Autowired
-	private ConfigAgenteService configAgenteService;
+	private AgenteService agenteService;
 
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping()
-	public ConfigAgente createConfig(@RequestBody String hostName) {
+	public Agente createAgente(@RequestBody String hostName) {
 
-		return configAgenteService.createConfig(hostName);
+		return agenteService.createAgente(hostName);
 	}
 	
 	@GetMapping("/{id}")
-	public ConfigAgente findById(@PathVariable String id) {
+	public Agente findById(@PathVariable String id) {
 		
-		return configAgenteService.findById(id);
+		return agenteService.findById(id);
 	}
 	
 }

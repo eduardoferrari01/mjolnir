@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import br.com.app.util.GenerateHash;
 
 @Document
-public class ConfigAgente implements Serializable{
+public class Agente implements Serializable{
 
 	private static final long serialVersionUID = 2574819657534120194L;
 	@Id
@@ -34,18 +34,18 @@ public class ConfigAgente implements Serializable{
 			return this;
 		}
 		
-		public ConfigAgente build() {
-			return new ConfigAgente(this);
+		public Agente build() {
+			return new Agente(this);
 		}
 	}
 	
-	private ConfigAgente(Builder builder) {
+	private Agente(Builder builder) {
 		this.hostName = builder.hostName;
 		this.hash = builder.hash;
 		this.tempoEspera = builder.tempoEspera;
 	}
 	
-	public ConfigAgente() {}
+	public Agente() {}
 	
 	public String getHash() {
 		return hash;
@@ -89,7 +89,7 @@ public class ConfigAgente implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ConfigAgente other = (ConfigAgente) obj;
+		Agente other = (Agente) obj;
 		if (hash == null) {
 			if (other.hash != null)
 				return false;
