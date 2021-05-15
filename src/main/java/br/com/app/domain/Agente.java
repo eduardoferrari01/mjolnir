@@ -15,22 +15,40 @@ public class Agente implements Serializable{
 	private String hash;
 	private String hostName;
 	private Long tempoEspera = 3L;
-
+	private String sector = "";
+	private String alias = "";
+	
 	public static class Builder {
 		
 		private String hostName;
 		private String hash;
 		private Long tempoEspera;
+		private String sector = "";
+		private String alias = "";
 		
 		public Builder(String hostName) {
 			this.hostName = hostName;
 			this.hash = new GenerateHash("SHA-256").gerar(hostName);
 			this.tempoEspera = 3L;
+			this.sector = "";
+			this.alias = "";
 		}
 		
 		public Builder tempoEspera(Long tempoEspera) {
 			
 			this.tempoEspera = tempoEspera;
+			return this;
+		}
+		
+		public Builder sector(String sector) {
+			
+			this.sector = sector;
+			return this;
+		}
+		
+		public Builder alias(String alias) {
+			
+			this.alias = alias;
 			return this;
 		}
 		
@@ -43,6 +61,8 @@ public class Agente implements Serializable{
 		this.hostName = builder.hostName;
 		this.hash = builder.hash;
 		this.tempoEspera = builder.tempoEspera;
+		this.sector = builder.sector;
+		this.alias = builder.alias;
 	}
 	
 	public Agente() {}
@@ -71,12 +91,30 @@ public class Agente implements Serializable{
 		this.tempoEspera = tempoEspera;
 	}
 
+	public String getSector() {
+		return sector;
+	}
+
+	public void setSector(String sector) {
+		this.sector = sector;
+	}
+
+	public String getAlias() {
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((alias == null) ? 0 : alias.hashCode());
 		result = prime * result + ((hash == null) ? 0 : hash.hashCode());
 		result = prime * result + ((hostName == null) ? 0 : hostName.hashCode());
+		result = prime * result + ((sector == null) ? 0 : sector.hashCode());
 		result = prime * result + ((tempoEspera == null) ? 0 : tempoEspera.hashCode());
 		return result;
 	}
@@ -90,6 +128,11 @@ public class Agente implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Agente other = (Agente) obj;
+		if (alias == null) {
+			if (other.alias != null)
+				return false;
+		} else if (!alias.equals(other.alias))
+			return false;
 		if (hash == null) {
 			if (other.hash != null)
 				return false;
@@ -100,6 +143,11 @@ public class Agente implements Serializable{
 				return false;
 		} else if (!hostName.equals(other.hostName))
 			return false;
+		if (sector == null) {
+			if (other.sector != null)
+				return false;
+		} else if (!sector.equals(other.sector))
+			return false;
 		if (tempoEspera == null) {
 			if (other.tempoEspera != null)
 				return false;
@@ -107,4 +155,5 @@ public class Agente implements Serializable{
 			return false;
 		return true;
 	}
+
 }
