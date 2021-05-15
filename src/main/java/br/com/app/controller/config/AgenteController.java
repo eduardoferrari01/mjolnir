@@ -1,5 +1,7 @@
 package br.com.app.controller.config;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +34,13 @@ public class AgenteController {
 	public Agente findById(@PathVariable String id) {
 		
 		return agenteService.findById(id);
+	}
+	
+	@ResponseStatus(HttpStatus.OK)
+	@GetMapping
+	public List<Agente> findAll(){
+		
+		return agenteService.findAll(); 
 	}
 	
 	@ResponseStatus(HttpStatus.CREATED)

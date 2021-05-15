@@ -4,6 +4,9 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Assertions;
@@ -105,6 +108,27 @@ public class AgenteServiceTest {
 		Assertions.assertEquals(alias, agenteRetorn.getAlias());
 		Assertions.assertEquals(sector, agenteRetorn.getSector());
 		 
+	}
+	
+	@Test
+	public void deveRetornarUmaListaDeAgentes() {
+
+		final String hostName1 = "pc1";
+		final String hostName2 = "pc2";
+		
+		Agente agente1 = agenteService.createAgente(hostName1);
+		Agente agente2 = agenteService.createAgente(hostName2);
+
+		List<Agente> agentesExpected = new ArrayList<>(Arrays.asList(agenteService.createAgente(hostName1),agenteService.createAgente(hostName2)));
+
+		when(agenteRepository.findAll()).thenReturn(new ArrayList<>( Arrays.asList(agente1,agente2)));
+		
+		List<Agente> agentesActual = agenteService.findAll();
+		verify(agenteRepository).findAll();
+
+		Assertions.assertTrue(agentesActual.size() == agentesExpected.size());
+		Assertions.assertEquals(agentesActual, agentesExpected);
+
 	}
 	
 }

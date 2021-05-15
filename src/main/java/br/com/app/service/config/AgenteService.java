@@ -1,5 +1,7 @@
 package br.com.app.service.config;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +13,9 @@ public class AgenteService {
 
 	@Autowired
 	private AgenteRepository agenteRepository;
-	
+
 	public Agente createAgente(String hostName) {
-		
+
 		Agente agente = agenteRepository.findByHostName(hostName);
 
 		if (agente == null) {
@@ -21,22 +23,28 @@ public class AgenteService {
 			agente = new Agente.Builder(hostName).build();
 			agenteRepository.save(agente);
 		}
-		
+
 		return agente;
 	}
-	
+
 	public void save(Agente agente) {
-		
+
 		agenteRepository.save(agente);
 	}
-	
+
 	public Agente findByHostName(String hostName) {
-		
+
 		return agenteRepository.findByHostName(hostName);
 	}
-	
+
 	public Agente findById(String id) {
-		
+
 		return agenteRepository.findById(id).get();
 	}
+
+	public List<Agente> findAll() {
+
+		return agenteRepository.findAll();
+	}
+
 }
