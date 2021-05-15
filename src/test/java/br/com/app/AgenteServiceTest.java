@@ -29,7 +29,9 @@ public class AgenteServiceTest {
 
 	private final String hostName = "meupc";
 	private final String hash = "d60079488fed3bbfd189ee5df6bdc000a5e1347296682b15f5e50fdd59112e70";
-
+	private final String alias = "alias";
+	private final String sector = "sector";
+	
 	@Test
 	public void deveCriarUmNovoAgenteQuandoHostNameNaoExisti() {
 
@@ -84,4 +86,25 @@ public class AgenteServiceTest {
 		Assertions.assertEquals(3L, agente.getTempoEspera());
 		Assertions.assertEquals(hostName, agente.getHostName());
 	}
+	
+	@Test
+	public void deveAtualizarAgente() {
+
+		when(agenteRepository.findByHostName(this.hostName)).thenReturn(new Agente.Builder(this.hostName).build());
+
+		Agente agenteFind = agenteService.findByHostName(this.hostName);
+		
+		agenteFind.setAlias(alias);
+		agenteFind.setSector(sector);
+
+		agenteService.save(agenteFind);
+		
+		Agente agenteRetorn = agenteService.findByHostName(this.hostName);
+		verify(agenteRepository).save(agenteRetorn);
+
+		Assertions.assertEquals(alias, agenteRetorn.getAlias());
+		Assertions.assertEquals(sector, agenteRetorn.getSector());
+		 
+	}
+	
 }

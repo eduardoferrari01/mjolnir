@@ -25,6 +25,11 @@ public class AgenteService {
 		return agente;
 	}
 	
+	public void save(Agente agente) {
+		
+		agenteRepository.save(agente);
+	}
+	
 	public Agente findByHostName(String hostName) {
 		
 		return agenteRepository.findByHostName(hostName);
