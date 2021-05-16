@@ -54,6 +54,7 @@ public class OperatingSystemTest {
 		OperatingSystem operatingSystem = new OperatingSystemBuilder(coletaResultado).builder();
 
 		Assertions.assertNotNull(operatingSystem);
+		Assertions.assertEquals(coletaResultado.getId(), operatingSystem.getId());
 		Assertions.assertEquals(64, operatingSystem.getBitness());
 		Assertions.assertEquals("Manjaro Linux", operatingSystem.getFamily());
 		Assertions.assertEquals("GNU/Linux", operatingSystem.getManufacturer());
