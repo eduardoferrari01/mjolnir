@@ -1,5 +1,10 @@
 package br.com.app.domain.os;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -89,7 +94,7 @@ public class OperatingSystem {
 	public Long getSystemBootTime() {
 		return systemBootTime;
 	}
-
+	
 	public void setSystemBootTime(Long systemBootTime) {
 		this.systemBootTime = systemBootTime;
 	}
@@ -102,6 +107,27 @@ public class OperatingSystem {
 		this.isElevated = isElevated;
 	}
 
+	public LocalDateTime getBootTime() {
+		return Instant.ofEpochSecond(getSystemBootTime())
+			.atZone(ZoneId.systemDefault()).toLocalDateTime();
+	}
+	
+	public Long getDayUptTime() {
+		
+		return TimeUnit.SECONDS.toDays(systemUptime);
+	}
+	
+	public String getHourUpTime() {
+
+		Long systemUptimeTemp = systemUptime;
+		Long hour = TimeUnit.SECONDS.toHours(systemUptimeTemp);
+		systemUptimeTemp -= TimeUnit.HOURS.toSeconds(hour);
+		Long minute = TimeUnit.SECONDS.toMinutes(systemUptimeTemp);
+		systemUptimeTemp -= TimeUnit.MINUTES.toSeconds(minute);
+		Long second = systemUptimeTemp;
+		return String.format("%02d:%02d:%02d", hour, minute, second);
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

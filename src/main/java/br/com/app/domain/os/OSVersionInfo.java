@@ -44,6 +44,19 @@ public class OSVersionInfo {
 		this.versionStr = versionStr;
 	}
 	
+	public String getVersionInfo() {
+		
+		StringBuilder versionStr = new StringBuilder();
+		versionStr.append(getVersion());
+		versionStr.append(" ");
+		versionStr.append(getCodeName());
+		versionStr.append(" ");
+		versionStr.append(getBuildNumber());
+		
+		return versionStr.toString();
+	}
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
