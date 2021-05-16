@@ -78,18 +78,7 @@ public class BuilderOSTest {
 		Assertions.assertFalse(networkParams.getDnsServers().isEmpty());
 
 	}
-
-	@Test
-	public void deveRetornarUmOperatingSystem() throws IOException {
-
-		coletaResultado.setJson(loadFileOSJson.loadOperatingSystem());
-		OperatingSystem operatingSystem = new OperatingSystemBuilder(coletaResultado).builder();
-
-		Assertions.assertNotNull(operatingSystem);
-		Assertions.assertNotNull(operatingSystem.getId());
-		Assertions.assertFalse(operatingSystem.getId().isEmpty());
-	}
-
+	
 	@Test
 	public void deveRetornarUmProcess() throws IOException {
 
