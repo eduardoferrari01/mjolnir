@@ -61,19 +61,6 @@ public class BuilderOSTest {
 	}
 
 	@Test
-	public void deveRetornarUmNetworkParams() throws IOException {
-
-		coletaResultado.setJson(loadFileOSJson.loadNetworkParams());
-		NetworkParams networkParams = new NetworkParamsBuilder(coletaResultado).builder();
-
-		Assertions.assertNotNull(networkParams);
-		Assertions.assertNotNull(networkParams.getId());
-		Assertions.assertFalse(networkParams.getId().isEmpty());
-		Assertions.assertFalse(networkParams.getDnsServers().isEmpty());
-
-	}
-	
-	@Test
 	public void deveRetornarUmProcess() throws IOException {
 
 		coletaResultado.setJson(loadFileOSJson.loadOSProcess());
