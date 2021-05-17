@@ -8,14 +8,10 @@ import org.junit.jupiter.api.Test;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.builder.os.FileSystemBuilder;
-import br.com.app.domain.builder.os.InternetProtocolStatsBuilder;
-import br.com.app.domain.builder.os.NetworkParamsBuilder;
 import br.com.app.domain.builder.os.ProcesseBuilder;
 import br.com.app.domain.builder.os.ServiceOSBuilder;
 import br.com.app.domain.builder.os.SessionsBuilder;
 import br.com.app.domain.os.FileSystem;
-import br.com.app.domain.os.InternetProtocolStats;
-import br.com.app.domain.os.NetworkParams;
 import br.com.app.domain.os.Processe;
 import br.com.app.domain.os.ServiceOS;
 import br.com.app.domain.os.Sessions;
@@ -47,19 +43,7 @@ public class BuilderOSTest {
 		Assertions.assertFalse(fileSystem.getFileStores().isEmpty());
 
 	}
-
-	@Test
-	public void deveRetornarUmInternetProtocolStats() throws IOException {
-
-		coletaResultado.setJson(loadFileOSJson.loadInternetProtocolStats());
-		InternetProtocolStats internetProtocolStats = new InternetProtocolStatsBuilder(coletaResultado).builder();
-
-		Assertions.assertNotNull(internetProtocolStats);
-		Assertions.assertNotNull(internetProtocolStats.getId());
-		Assertions.assertFalse(internetProtocolStats.getId().isEmpty());
-
-	}
-
+	
 	@Test
 	public void deveRetornarUmProcess() throws IOException {
 
