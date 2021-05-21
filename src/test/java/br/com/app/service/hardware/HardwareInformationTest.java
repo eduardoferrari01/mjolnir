@@ -33,93 +33,92 @@ public class HardwareInformationTest {
 	private static ColetaResultado coletaResultadoComputerSystem;
 	private static ColetaResultado coletaResultadoCentralProcessor;
 	private static ColetaResultado coletaResultadoDisplays;
-	@InjectMocks 
+	@InjectMocks
 	private HardwareInformationService hardwareInformationService;
 	@Mock
 	private CentralProcessorRepository centralProcessorRepository;
 	@Mock
 	private ComputerSystemService computerSystemService;
-	@Mock 
+	@Mock
 	private CentralProcessorService centralProcessorService;
-	@Mock 
+	@Mock
 	private DisplaysService displaysService;
-	private static String ID  = "";
-	
+	private static String ID = "";
+	private static ComputerSystem computerSystem;
+	private static CentralProcessor centralProcessor;
+	private static Displays displays;
+
 	@BeforeAll
 	public static void setup() {
-		
+
 		LoadFileHardwareJson loadJson = new LoadFileHardwareJson();
 		coletaResultadoComputerSystem = new ColetaResultadoTestDataBuilder().setJson(loadJson.loadComputerSystem()).builder();
 		coletaResultadoCentralProcessor = new ColetaResultadoTestDataBuilder().setJson(loadJson.loadProcessor()).builder();
 		coletaResultadoDisplays = new ColetaResultadoTestDataBuilder().setJson(loadJson.loadDisplays()).builder();
+		computerSystem = new ComputerSystemBuilder(coletaResultadoComputerSystem).builder();
+		centralProcessor = new CentralProcessorBuilder(coletaResultadoCentralProcessor).builder();
+		displays = new DisplaysBuilder(coletaResultadoDisplays).builder();
 		ID = coletaResultadoCentralProcessor.getId();
 	}
-	
+
 	@Test
 	public void deveRetornarUmHardwareInformation() {
- 
-		ComputerSystem computerSystem = new ComputerSystemBuilder(coletaResultadoComputerSystem).builder();
-		CentralProcessor centralProcessor = new CentralProcessorBuilder(coletaResultadoCentralProcessor).builder();
-		Displays displays = new DisplaysBuilder(coletaResultadoDisplays).builder();
-		
-		HardwareInformation hardwareInformation = new HardwareInformationBuilder(computerSystem, centralProcessor, displays).builderToDto();
-		
+
 		when(computerSystemService.findById(ID)).thenReturn(computerSystem);
 		when(centralProcessorService.findById(ID)).thenReturn(centralProcessor);
 		when(displaysService.findById(ID)).thenReturn(displays);
-		
-		HardwareInformation hardwareInformationFind = hardwareInformationService.findById(ID);
-		
+
+		HardwareInformation hardwareInformationActual = hardwareInformationService.findById(ID);
+
 		verify(computerSystemService).findById(ID);
 		verify(centralProcessorService).findById(ID);
 		verify(displaysService).findById(ID);
-		
-		Assertions.assertEquals(hardwareInformationFind, hardwareInformation);
+
+		validateHardwareInformation(hardwareInformationActual);
 	}
-	
+
 	@Test
-	public void deveCriarUmHardwareInformation() {
+	public void deveConstruirHardwareInformation() {
+
+		HardwareInformation hardwareInformation = new HardwareInformationBuilder(computerSystem, centralProcessor,
+				displays).builderToDto();
 		
-		ComputerSystem computerSystem = new ComputerSystemBuilder(coletaResultadoComputerSystem).builder();
-		CentralProcessor centralProcessor = new CentralProcessorBuilder(coletaResultadoCentralProcessor).builder();
-		Displays displays = new DisplaysBuilder(coletaResultadoDisplays).builder();
-		
-		HardwareInformation hardwareInformation = new HardwareInformationBuilder(computerSystem, centralProcessor, displays).builderToDto();
-		
-		Assertions.assertEquals(hardwareInformation.getManufacturer(), computerSystem.getManufacturer());
-		Assertions.assertEquals(hardwareInformation.getModel(), computerSystem.getModel());
-		Assertions.assertEquals(hardwareInformation.getSerialNumber(), computerSystem.getSerialNumber());
-		
-		Assertions.assertEquals(hardwareInformation.getFirmwareManufacturer(), computerSystem.getFirmware().getManufacturer());
-		Assertions.assertEquals(hardwareInformation.getFirmwareName(), computerSystem.getFirmware().getName());
-		Assertions.assertEquals(hardwareInformation.getFirmwareDescription(), computerSystem.getFirmware().getDescription());
-		Assertions.assertEquals(hardwareInformation.getFirmwareVersion(),  computerSystem.getFirmware().getVersion());
-		Assertions.assertEquals(hardwareInformation.getFirmwareReleaseDate(), computerSystem.getFirmware().getReleaseDate());
-		
-		Assertions.assertEquals(hardwareInformation.getBaseboardManufacturer(), computerSystem.getBaseboard().getManufacturer());
-		Assertions.assertEquals(hardwareInformation.getBaseboardModel(), computerSystem.getBaseboard().getModel());
-		Assertions.assertEquals(hardwareInformation.getBaseboardVersion(), computerSystem.getBaseboard().getVersion());
-		Assertions.assertEquals(hardwareInformation.getBaseboardSerialNumber(), computerSystem.getBaseboard().getSerialNumber());
-		
-		Assertions.assertEquals(hardwareInformation.getProcessorName(), centralProcessor.getProcessorIdentifier().getName());
-		Assertions.assertEquals(hardwareInformation.getProcessorIdentifier(), centralProcessor.getProcessorIdentifier().getIdentifier());
-		Assertions.assertEquals(hardwareInformation.getProcessorID(), centralProcessor.getProcessorIdentifier().getProcessorID());
-		Assertions.assertEquals(hardwareInformation.getProcessorMicroarchitecture(), centralProcessor.getProcessorIdentifier().getMicroarchitecture());
-		Assertions.assertEquals(hardwareInformation.getProcessorPhysicalPackageCount(), centralProcessor.getPhysicalPackageCount());
-		Assertions.assertEquals(hardwareInformation.getProcessorPhysicalProcessorCount(), centralProcessor.getPhysicalProcessorCount());
-		Assertions.assertEquals(hardwareInformation.getProcessorLogicalProcessorCount(), centralProcessor.getLogicalProcessorCount());
-		
+		validateHardwareInformation(hardwareInformation);
+
+	}
+
+	private void validateHardwareInformation(HardwareInformation hardwareInformation) {
+
+		Assertions.assertEquals(computerSystem.getManufacturer(), hardwareInformation.getManufacturer());
+		Assertions.assertEquals(computerSystem.getModel(), hardwareInformation.getModel());
+		Assertions.assertEquals(computerSystem.getSerialNumber(), hardwareInformation.getSerialNumber());
+		Assertions.assertEquals(computerSystem.getFirmware().getManufacturer(), hardwareInformation.getFirmwareManufacturer());
+		Assertions.assertEquals(computerSystem.getFirmware().getName(), hardwareInformation.getFirmwareName());
+		Assertions.assertEquals(computerSystem.getFirmware().getDescription(), hardwareInformation.getFirmwareDescription());
+		Assertions.assertEquals(computerSystem.getFirmware().getVersion(), hardwareInformation.getFirmwareVersion());
+		Assertions.assertEquals(computerSystem.getFirmware().getReleaseDate(), hardwareInformation.getFirmwareReleaseDate());
+		Assertions.assertEquals(computerSystem.getBaseboard().getManufacturer(), hardwareInformation.getBaseboardManufacturer());
+		Assertions.assertEquals(computerSystem.getBaseboard().getModel(), hardwareInformation.getBaseboardModel());
+		Assertions.assertEquals(computerSystem.getBaseboard().getVersion(), hardwareInformation.getBaseboardVersion());
+		Assertions.assertEquals(computerSystem.getBaseboard().getSerialNumber(), hardwareInformation.getBaseboardSerialNumber());
+		Assertions.assertEquals(centralProcessor.getProcessorIdentifier().getName() ,hardwareInformation.getProcessorName());
+		Assertions.assertEquals(centralProcessor.getProcessorIdentifier().getIdentifier() , hardwareInformation.getProcessorIdentifier());
+		Assertions.assertEquals(centralProcessor.getProcessorIdentifier().getProcessorID(), hardwareInformation.getProcessorID());
+		Assertions.assertEquals(centralProcessor.getProcessorIdentifier().getMicroarchitecture(), hardwareInformation.getProcessorMicroarchitecture());
+		Assertions.assertEquals(centralProcessor.getPhysicalPackageCount(),hardwareInformation.getProcessorPhysicalPackageCount());
+		Assertions.assertEquals(centralProcessor.getPhysicalProcessorCount(), hardwareInformation.getProcessorPhysicalProcessorCount());
+		Assertions.assertEquals(centralProcessor.getLogicalProcessorCount(), hardwareInformation.getProcessorLogicalProcessorCount());
+
 		List<String> hardwareInformationDisplays = hardwareInformation.getDisplays();
-		
-		List<String> displaysFind = new ArrayList<>();
-		
+
+		List<String> displaysExpected = new ArrayList<>();
+
 		displays.getDisplays().forEach(display -> {
 
-			displaysFind.addAll(display.getEdid());
+			displaysExpected.addAll(display.getEdid());
 		});
-		 
-		Assertions.assertEquals( hardwareInformationDisplays, displaysFind);
-		
-	 }
-	
+
+		Assertions.assertEquals(displaysExpected, hardwareInformationDisplays);
+
+	}
 }
