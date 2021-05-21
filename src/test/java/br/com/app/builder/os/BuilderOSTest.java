@@ -8,13 +8,9 @@ import org.junit.jupiter.api.Test;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.builder.os.FileSystemBuilder;
-import br.com.app.domain.builder.os.ProcesseBuilder;
 import br.com.app.domain.builder.os.ServiceOSBuilder;
-import br.com.app.domain.builder.os.SessionsBuilder;
 import br.com.app.domain.os.FileSystem;
-import br.com.app.domain.os.Processe;
 import br.com.app.domain.os.ServiceOS;
-import br.com.app.domain.os.Sessions;
 import br.com.app.test.builder.ColetaResultadoTestDataBuilder;
 import br.com.app.test.data.loadfile.LoadFileOSJson;
 
@@ -56,17 +52,4 @@ public class BuilderOSTest {
 		Assertions.assertFalse(service.getOsService().isEmpty());
 	}
 
-	@Test
-	public void deveRetornarUmSession() throws IOException {
-
-		coletaResultado.setJson(loadFileOSJson.loadOSSession());
-		Sessions sessions = new SessionsBuilder(coletaResultado).builder();
-
-		Assertions.assertNotNull(sessions);
-		Assertions.assertNotNull(sessions.getId());
-		Assertions.assertFalse(sessions.getId().isEmpty());
-		Assertions.assertFalse(sessions.getOsSession().isEmpty());
-	}
-
-	
 }
