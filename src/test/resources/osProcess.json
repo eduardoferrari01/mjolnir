@@ -3,7 +3,7 @@
   "bitness" : 0,
   "name" : "teste1",
   "path" : "",
-  "commandLine" : "/sbin/init\u0000",
+  "commandLine" : "sbin0",
   "user" : "root",
   "userID" : "0",
   "group" : "root",
@@ -25,7 +25,22 @@
   "currentWorkingDirectory" : "",
   "openFiles" : -1,
   "affinityMask" : 15,
-  "threadDetails" : [ ],
+  "threadDetails" : [ {
+  	"threadId" :0,
+  	"name" : "xxx",
+	"state" : "SLEEPING",
+	"threadCpuLoadCumulative" : 1.0,
+	"owningProcessId" : 111,
+	"startMemoryAddress" : 333,
+	"contextSwitches" : 454,
+	"minorFaults" : 3,
+	"majorFaults" : 2,
+	"kernelTime" : 12,
+	"userTime" : 5,
+	"upTime" : 1,
+	"startTime" : 1,
+	"priority" : 5 
+	}],
   "processCpuLoadCumulative" : 0.13826904352110528
 }, {
   "processID" : 2,

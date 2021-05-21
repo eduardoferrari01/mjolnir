@@ -45,18 +45,6 @@ public class BuilderOSTest {
 	}
 	
 	@Test
-	public void deveRetornarUmProcess() throws IOException {
-
-		coletaResultado.setJson(loadFileOSJson.loadOSProcess());
-		Processe processe = new ProcesseBuilder(coletaResultado).builder();
-
-		Assertions.assertNotNull(processe);
-		Assertions.assertNotNull(processe.getId());
-		Assertions.assertFalse(processe.getId().isEmpty());
-		Assertions.assertFalse(processe.getOsProcess().isEmpty());
-	}
-
-	@Test
 	public void deveRetornarUmService() throws IOException {
 
 		coletaResultado.setJson(loadFileOSJson.loadOSService());
