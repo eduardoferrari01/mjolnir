@@ -2,10 +2,10 @@
   "openFileDescriptors" : 22328,
   "maxFileDescriptors" : 8223372011888875817,
   "fileStores" : [ {
-    "name" : "/",
+    "name" : "bbbb",
     "volume" : "/dev/sda1",
-    "label" : "/",
-    "mount" : "/",
+    "label" : "xxx",
+    "mount" : "/mnt",
     "options" : "rw,noatime,discard",
     "uuid" : "edc3314c-1403-45w1-9et4-c9ao746d29e1",
     "logicalVolume" : "",
