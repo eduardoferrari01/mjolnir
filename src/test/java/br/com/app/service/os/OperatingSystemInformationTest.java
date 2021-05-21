@@ -33,34 +33,29 @@ public class OperatingSystemInformationTest {
 	@Mock
 	private OperatingSystemService operatingSystemService;
 	private static String ID = "";
-
+	private static OSVersionInfo osVersionInfo;
+	private static OperatingSystem operatingSystem;
+	
+	
 	@BeforeAll
 	public static void setup() {
 
 		LoadFileOSJson loadJson = new LoadFileOSJson();
-		coletaResultadoOsVersionInfo = new ColetaResultadoTestDataBuilder().setJson(loadJson.loadOSVersionInfo())
-				.builder();
-		coletaResultadoOperatingSystem = new ColetaResultadoTestDataBuilder().setJson(loadJson.loadOperatingSystem())
-				.builder();
+		coletaResultadoOsVersionInfo = new ColetaResultadoTestDataBuilder().setJson(loadJson.loadOSVersionInfo()).builder();
+		coletaResultadoOperatingSystem = new ColetaResultadoTestDataBuilder().setJson(loadJson.loadOperatingSystem()).builder();
+		
 		ID = coletaResultadoOperatingSystem.getId();
+		osVersionInfo = new OSVersionInfoBuilder(coletaResultadoOsVersionInfo).builder();
+		operatingSystem = new OperatingSystemBuilder(coletaResultadoOperatingSystem).builder();
 	}
 
 	@Test
-	public void deveCriarUmOperatingSystemInformation() {
-
-		OSVersionInfo osVersionInfo = new OSVersionInfoBuilder(coletaResultadoOsVersionInfo).builder();
-		OperatingSystem operatingSystem = new OperatingSystemBuilder(coletaResultadoOperatingSystem).builder();
+	public void deveConstruirOperatingSystemInformation() {
 
 		OperatingSystemInformation operatingSystemInformation = new OperatingSystemInformationBuilder(osVersionInfo,
 				operatingSystem).builderToDto();
-
-		Assertions.assertEquals(operatingSystem.getManufacturer(), operatingSystemInformation.getManufacturer());
-		Assertions.assertEquals(operatingSystem.getFamily(), operatingSystemInformation.getFamily());
-		Assertions.assertEquals(operatingSystem.getBitness(), operatingSystemInformation.getBitness());
-		Assertions.assertEquals(operatingSystem.getDayUptTime(), operatingSystemInformation.getDayUptTime());
-		Assertions.assertEquals(operatingSystem.getHourUpTime(), operatingSystemInformation.getHourUpTime());
-		Assertions.assertEquals(operatingSystem.getBootTime(), operatingSystemInformation.getBootTime());
-		Assertions.assertEquals(osVersionInfo.getVersionInfo(), operatingSystemInformation.getVersionInfo());
+		
+		validateHardwareInformation(operatingSystemInformation);
 	}
 
 	@Test
@@ -69,9 +64,6 @@ public class OperatingSystemInformationTest {
 		OSVersionInfo osVersionInfo = new OSVersionInfoBuilder(coletaResultadoOsVersionInfo).builder();
 		OperatingSystem operatingSystem = new OperatingSystemBuilder(coletaResultadoOperatingSystem).builder();
 
-		OperatingSystemInformation operatingSystemInformation = new OperatingSystemInformationBuilder(osVersionInfo,
-				operatingSystem).builderToDto();
-		
 		when(operatingSystemService.findById(ID)).thenReturn(operatingSystem);
 		when(osVersionInfoService.findById(ID)).thenReturn(osVersionInfo);
 		
@@ -80,6 +72,18 @@ public class OperatingSystemInformationTest {
 		verify(osVersionInfoService).findById(ID);
 		verify(operatingSystemService).findById(ID);
 		
-		Assertions.assertEquals(operatingSystemInformation, operatingSystemInformationActual);
+		validateHardwareInformation(operatingSystemInformationActual);
+		
+	}
+	
+	private void validateHardwareInformation(OperatingSystemInformation osInformation) {
+		
+		Assertions.assertEquals(operatingSystem.getManufacturer(), osInformation.getManufacturer());
+		Assertions.assertEquals(operatingSystem.getFamily(), osInformation.getFamily());
+		Assertions.assertEquals(operatingSystem.getBitness(), osInformation.getBitness());
+		Assertions.assertEquals(operatingSystem.getDayUptTime(), osInformation.getDayUptTime());
+		Assertions.assertEquals(operatingSystem.getHourUpTime(), osInformation.getHourUpTime());
+		Assertions.assertEquals(operatingSystem.getBootTime(), osInformation.getBootTime());
+		Assertions.assertEquals(osVersionInfo.getVersionInfo(), osInformation.getVersionInfo());
 	}
 }
