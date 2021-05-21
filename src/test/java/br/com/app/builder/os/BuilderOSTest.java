@@ -1,3 +1,4 @@
+
 package br.com.app.builder.os;
 
 import java.io.IOException;
@@ -8,9 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.builder.os.FileSystemBuilder;
-import br.com.app.domain.builder.os.ServiceOSBuilder;
 import br.com.app.domain.os.FileSystem;
-import br.com.app.domain.os.ServiceOS;
 import br.com.app.test.builder.ColetaResultadoTestDataBuilder;
 import br.com.app.test.data.loadfile.LoadFileOSJson;
 
@@ -39,17 +38,4 @@ public class BuilderOSTest {
 		Assertions.assertFalse(fileSystem.getFileStores().isEmpty());
 
 	}
-	
-	@Test
-	public void deveRetornarUmService() throws IOException {
-
-		coletaResultado.setJson(loadFileOSJson.loadOSService());
-		ServiceOS service = new ServiceOSBuilder(coletaResultado).builder();
-
-		Assertions.assertNotNull(service);
-		Assertions.assertNotNull(service.getId());
-		Assertions.assertFalse(service.getId().isEmpty());
-		Assertions.assertFalse(service.getOsService().isEmpty());
-	}
-
 }
