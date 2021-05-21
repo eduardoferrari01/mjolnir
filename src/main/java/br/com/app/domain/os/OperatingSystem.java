@@ -11,10 +11,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class OperatingSystem {
 
-	enum ProcessSort {
-		CPU, MEMORY, OLDEST, NEWEST, PID, PARENTPID, NAME
-	}
-	
 	@Id
 	private String id;
 	private String family;
@@ -25,8 +21,7 @@ public class OperatingSystem {
 	private Integer bitness;
 	private Long systemUptime;
 	private Long systemBootTime;
-	private Boolean isElevated;
-
+	 
 	public String getId() {
 		return id;
 	}
@@ -97,14 +92,6 @@ public class OperatingSystem {
 	
 	public void setSystemBootTime(Long systemBootTime) {
 		this.systemBootTime = systemBootTime;
-	}
-
-	public Boolean getIsElevated() {
-		return isElevated;
-	}
-
-	public void setIsElevated(Boolean isElevated) {
-		this.isElevated = isElevated;
 	}
 
 	public LocalDateTime getBootTime() {
