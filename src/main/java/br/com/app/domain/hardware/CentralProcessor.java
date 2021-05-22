@@ -1,6 +1,5 @@
 package br.com.app.domain.hardware;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class CentralProcessor {
