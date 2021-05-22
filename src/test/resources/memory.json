@@ -10,5 +10,11 @@
     "swapPagesOut" : 8168
   },
   "available" : 2298691584,
-  "physicalMemory" : [ ]
+  "physicalMemory" : [ {
+  	"bankLabel" : "label",
+  	"capacity" : 789,
+  	"clockSpeed" :112,
+  	"manufacturer" : "xxx",
+  	"memoryType" : "QQQ"
+  }]
 }
