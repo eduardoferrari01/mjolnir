@@ -30,9 +30,7 @@ public class OSFileStore {
     
     private Long totalInodes;
     
-    private Boolean updateAttributes;
-
-	public String getName() {
+    public String getName() {
 		return name;
 	}
 
@@ -144,12 +142,4 @@ public class OSFileStore {
 		this.totalInodes = totalInodes;
 	}
 
-	public Boolean getUpdateAttributes() {
-		return updateAttributes;
-	}
-
-	public void setUpdateAttributes(Boolean updateAttributes) {
-		this.updateAttributes = updateAttributes;
-	}
-    
 }

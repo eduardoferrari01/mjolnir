@@ -56,8 +56,6 @@ public class PowerSource {
 
 	private Double temperature;
 
-	private Boolean updateAttributes;
-
 	public String getName() {
 		return name;
 	}
@@ -224,14 +222,6 @@ public class PowerSource {
 
 	public void setTemperature(Double temperature) {
 		this.temperature = temperature;
-	}
-
-	public Boolean getUpdateAttributes() {
-		return updateAttributes;
-	}
-
-	public void setUpdateAttributes(Boolean updateAttributes) {
-		this.updateAttributes = updateAttributes;
 	}
 
 }

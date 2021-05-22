@@ -29,7 +29,6 @@ public class OSProcess {
 	private Double processCpuLoadCumulative;
 	private Integer bitness;
 	private Long affinityMask;
-	private Boolean updateAttributes;
 	private List<OSThread> threadDetails;
 	private Long minorFaults;
 	private Long majorFaults;
@@ -236,14 +235,6 @@ public class OSProcess {
 
 	public void setAffinityMask(Long affinityMask) {
 		this.affinityMask = affinityMask;
-	}
-
-	public Boolean getUpdateAttributes() {
-		return updateAttributes;
-	}
-
-	public void setUpdateAttributes(Boolean updateAttributes) {
-		this.updateAttributes = updateAttributes;
 	}
 
 	public List<OSThread> getThreadDetails() {

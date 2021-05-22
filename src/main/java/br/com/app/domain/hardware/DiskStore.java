@@ -16,8 +16,7 @@ public class DiskStore {
 	private Long transferTime;
 	private List<Partition> partitions;
 	private Long timeStamp;
-	private Boolean updateAttributes;
-
+	
 	public String getModel() {
 		return model;
 	}
@@ -114,12 +113,4 @@ public class DiskStore {
 		this.timeStamp = timeStamp;
 	}
 
-	public Boolean getUpdateAttributes() {
-		return updateAttributes;
-	}
-
-	public void setUpdateAttributes(Boolean updateAttributes) {
-		this.updateAttributes = updateAttributes;
-	}
-	
 }

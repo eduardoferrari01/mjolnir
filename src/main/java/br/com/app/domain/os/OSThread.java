@@ -18,8 +18,7 @@ public class OSThread {
 	private Long upTime;
 	private Long startTime;
 	private Integer priority;
-	private Boolean updateAttributes;
-
+	
 	public Integer getThreadId() {
 		return threadId;
 	}
@@ -132,11 +131,4 @@ public class OSThread {
 		this.priority = priority;
 	}
 
-	public Boolean getUpdateAttributes() {
-		return updateAttributes;
-	}
-
-	public void setUpdateAttributes(Boolean updateAttributes) {
-		this.updateAttributes = updateAttributes;
-	}
 }

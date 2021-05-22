@@ -28,7 +28,6 @@ public class Network {
 	private Long speed;
 	private Long timeStamp;
 	private Boolean knownVmMacAddr;
-	private Boolean updateAttributes;
 	private String ifAlias;
 	private IfOperStatus ifOperStatus;
 	
@@ -164,12 +163,7 @@ public class Network {
 	public void setKnownVmMacAddr(Boolean knownVmMacAddr) {
 		this.knownVmMacAddr = knownVmMacAddr;
 	}
-	public Boolean getUpdateAttributes() {
-		return updateAttributes;
-	}
-	public void setUpdateAttributes(Boolean updateAttributes) {
-		this.updateAttributes = updateAttributes;
-	}
+	
 	public String getIfAlias() {
 		return ifAlias;
 	}
