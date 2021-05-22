@@ -37,13 +37,6 @@ public class CentralProcessorController {
 	}
 	
 	@ResponseStatus(HttpStatus.OK)
-	@GetMapping
-	public List<CentralProcessor> findAll(){
-		
-		return processorService.findAll();
-	}
-	
-	@ResponseStatus(HttpStatus.OK)
 	@GetMapping("/{id}")
 	public CentralProcessor findById(@PathVariable String id){
 		

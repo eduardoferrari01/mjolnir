@@ -1,7 +1,5 @@
 package br.com.app.service.hardware;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,11 +19,6 @@ public class CentralProcessorService {
 		
 		CentralProcessor processor = new CentralProcessorBuilder(coletaResultado).builder();
 		processorRepository.save(processor);
-	}
-	
-	public List<CentralProcessor> findAll(){
-		
-		return processorRepository.findAll();
 	}
 	
 	public CentralProcessor findById(String id) throws NotFoundException {
