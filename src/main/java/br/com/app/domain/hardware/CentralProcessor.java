@@ -114,13 +114,4 @@ public class CentralProcessor {
 		this.processorIdentifier = processorIdentifier;
 	}
 
-	@Override
-	public String toString() {
-		return "Processor [maxFreq=" + maxFreq + ", currentFreq=" + currentFreq + ", contextSwitches=" + contextSwitches
-				+ ", interrupts=" + interrupts + ", systemCpuLoadTicks=" + systemCpuLoadTicks
-				+ ", processorCpuLoadTicks=" + Arrays.toString(processorCpuLoadTicks) + ", physicalPackageCount="
-				+ physicalPackageCount + ", physicalProcessorCount=" + physicalProcessorCount
-				+ ", logicalProcessorCount=" + logicalProcessorCount + ", logicalProcessors=" + logicalProcessors
-				+ ", processorIdentifier=" + processorIdentifier + "]";
-	}
 }
