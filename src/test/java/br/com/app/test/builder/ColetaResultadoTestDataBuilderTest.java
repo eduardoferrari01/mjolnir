@@ -1,4 +1,4 @@
-package br.com.app;
+package br.com.app.test.builder;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -7,7 +7,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import br.com.app.domain.ColetaResultado;
-import br.com.app.test.builder.ColetaResultadoTestDataBuilder;
 import br.com.app.test.data.loadfile.LoadFileHardwareJson;
 
 @ExtendWith(MockitoExtension.class)
