@@ -111,11 +111,7 @@ public class Agente implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((alias == null) ? 0 : alias.hashCode());
 		result = prime * result + ((hash == null) ? 0 : hash.hashCode());
-		result = prime * result + ((hostName == null) ? 0 : hostName.hashCode());
-		result = prime * result + ((sector == null) ? 0 : sector.hashCode());
-		result = prime * result + ((tempoEspera == null) ? 0 : tempoEspera.hashCode());
 		return result;
 	}
 
@@ -128,30 +124,10 @@ public class Agente implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Agente other = (Agente) obj;
-		if (alias == null) {
-			if (other.alias != null)
-				return false;
-		} else if (!alias.equals(other.alias))
-			return false;
 		if (hash == null) {
 			if (other.hash != null)
 				return false;
 		} else if (!hash.equals(other.hash))
-			return false;
-		if (hostName == null) {
-			if (other.hostName != null)
-				return false;
-		} else if (!hostName.equals(other.hostName))
-			return false;
-		if (sector == null) {
-			if (other.sector != null)
-				return false;
-		} else if (!sector.equals(other.sector))
-			return false;
-		if (tempoEspera == null) {
-			if (other.tempoEspera != null)
-				return false;
-		} else if (!tempoEspera.equals(other.tempoEspera))
 			return false;
 		return true;
 	}
