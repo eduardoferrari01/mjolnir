@@ -18,7 +18,7 @@
     "size" : 92624209920,
     "major" : 8,
     "minor" : 1,
-    "mountPoint" : "/"
+    "mountPoint" : "/mnt"
   }, {
     "identification" : "/dev/sda2",
     "name" : "/sys/devices/pci0000:00/0000:00:1f.2/ata5/host4/target4:0:0/4:0:0:0/block/sda/sda2",
