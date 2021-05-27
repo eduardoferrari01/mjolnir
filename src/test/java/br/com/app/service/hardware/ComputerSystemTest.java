@@ -61,6 +61,25 @@ public class ComputerSystemTest {
 		Assertions.assertEquals(computerSystemRetorno.getId(), computerSystem.getId());
 	}
 	
+	@Test
+	public void deveConstruirComputerSystem() {
+
+		ComputerSystem computerSystem = new ComputerSystemBuilder(coletaResultado).builder();
+
+		Assertions.assertEquals("System manufacturer", computerSystem.getManufacturer());
+		Assertions.assertEquals("System Product Name (version: System Version)", computerSystem.getModel());
+		Assertions.assertEquals("unknown", computerSystem.getSerialNumber());
+		Assertions.assertEquals("unknown", computerSystem.getHardwareUUID());
+		Assertions.assertEquals("unknown", computerSystem.getFirmware().getManufacturer());
+		Assertions.assertEquals("unknown", computerSystem.getFirmware().getName());
+		Assertions.assertEquals("dmi:bvnAmericanMegatrendsInc.", computerSystem.getFirmware().getDescription());
+		Assertions.assertEquals("4307", computerSystem.getFirmware().getVersion());
+		Assertions.assertEquals("2013-05-13", computerSystem.getFirmware().getReleaseDate());
+		Assertions.assertEquals("ASUSTeK COMPUTER INC.", computerSystem.getBaseboard().getManufacturer());
+		Assertions.assertEquals("P8H61-M LE/BR", computerSystem.getBaseboard().getModel());
+		Assertions.assertEquals("Rev x.0x", computerSystem.getBaseboard().getVersion());
+		Assertions.assertEquals("unknown", computerSystem.getBaseboard().getSerialNumber());
+	}
 	
 	@Test
 	public void deveLancarNotFoundExceptionQuandoIdNaoExistir() {
