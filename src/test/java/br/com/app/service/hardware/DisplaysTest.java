@@ -5,6 +5,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Assertions;
@@ -18,9 +19,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.NotFoundException;
-import br.com.app.domain.builder.hardware.CentralProcessorBuilder;
 import br.com.app.domain.builder.hardware.DisplaysBuilder;
-import br.com.app.domain.hardware.CentralProcessor;
+import br.com.app.domain.hardware.Display;
 import br.com.app.domain.hardware.Displays;
 import br.com.app.repository.hardware.DisplaysRepository;
 import br.com.app.test.builder.ColetaResultadoTestDataBuilder;
@@ -59,15 +59,31 @@ public class DisplaysTest {
 	
 	@Test
 	public void deveRetornarUmDisplays() {
- 
-		Displays displays = new DisplaysBuilder(coletaResultado).builder();
-		
+  
 		when(displaysRepository.findById(coletaResultado.getId())).thenReturn(Optional.of(new DisplaysBuilder(coletaResultado).builder()));
 		
-		Displays displaysRetorno = displaysService.findById(coletaResultado.getId());
+		Displays display = displaysService.findById(coletaResultado.getId());
 		verify(displaysRepository).findById(coletaResultado.getId());
 		
-		Assertions.assertEquals(displaysRetorno.getId(), displays.getId());
+		validateDisplays(display);
+	}
+	
+	@Test
+	public void deveConstruirDisplays() {
+	
+		Displays displays = new DisplaysBuilder(coletaResultado).builder();
+		validateDisplays(displays);
+	}
+	
+	private void validateDisplays(Displays displays) {
+		
+		Assertions.assertNotNull(displays);
+		Assertions.assertEquals(coletaResultado.getId(), displays.getId());
+		Assertions.assertFalse(displays.getDisplays().isEmpty());
+		 
+		Display display = displays.getDisplays().get(0);
+		
+		Assertions.assertEquals(Arrays.asList("monitor"), display.getEdid());
 	}
 	
 }
