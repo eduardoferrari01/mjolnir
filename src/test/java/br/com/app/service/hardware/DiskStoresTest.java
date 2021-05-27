@@ -15,8 +15,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import br.com.app.domain.ColetaResultado;
 import br.com.app.domain.builder.hardware.DiskStoresBuilder;
+import br.com.app.domain.builder.hardware.NetworkIFBuilder;
 import br.com.app.domain.hardware.DiskStore;
 import br.com.app.domain.hardware.Disks;
+import br.com.app.domain.hardware.NetworkIF;
 import br.com.app.domain.hardware.Partition;
 import br.com.app.repository.hardware.DisksRepository;
 import br.com.app.test.builder.ColetaResultadoTestDataBuilder;
@@ -87,6 +89,14 @@ public class DiskStoresTest {
 		Assertions.assertEquals("/sys/devices/pci0000:00/0000:00:1f.2/ata5/host4/target4:0:0/4:0:0:0/block/sda/sda1" ,partition.getName());
 		Assertions.assertEquals("ext4" ,partition.getType());
 		Assertions.assertEquals("edb4414c-8423-41b1-9ed4-w9dc748d29e1" ,partition.getUuid());
+	}
+	
+	@Test
+	public void deveRetornarDiskStoreVazio() {
+
+		Disks disks = new DiskStoresBuilder(coletaResultado).builder();
+		disks.setDiskStores(null);
+		Assertions.assertTrue(disks.getDiskStores().isEmpty());
 	}
 	
 }
