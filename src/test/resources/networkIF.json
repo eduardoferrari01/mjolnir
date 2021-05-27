@@ -1,6 +1,6 @@
 [ {
   "mtu" : 1500,
-  "subnetMasks" : [ ],
+  "subnetMasks" : [ "123", "543", "987"],
   "prefixLengths" : [ 64, 64 ],
   "ifType" : 1,
   "connectorPresent" : true,
@@ -14,7 +14,7 @@
   "collisions" : 0,
   "speed" : 10485760000,
   "timeStamp" : 1612641348584,
-  "ipv4addr" : [ ],
+  "ipv4addr" : [ "abc", "123", "cbc" ],
   "ipv6addr" : [ "fe78:0:0:0:1207:w153:398f:12aa", "fe78:0:0:0:cc02:3eff:fece:42c0" ],
   "knownVmMacAddr" : false,
   "ndisPhysicalMediumType" : 0,
