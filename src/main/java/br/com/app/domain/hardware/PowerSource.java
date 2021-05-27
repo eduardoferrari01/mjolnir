@@ -2,58 +2,30 @@ package br.com.app.domain.hardware;
 
 import java.time.LocalDate;
 
+import br.com.app.domain.enums.CapacityUnits;
+
 public class PowerSource {
 
-    enum CapacityUnits {
-      
-        MWH,
-
-      
-        MAH,
-
-        RELATIVE;
-    }
-
 	private String name;
-
 	private String deviceName;
-
 	private Double remainingCapacityPercent;
-
 	private Double timeRemainingEstimated;
-
 	private Double timeRemainingInstant;
-
 	private Double powerUsageRate;
-
 	private Double voltage;
-
 	private Double amperage;
-
 	private Boolean powerOnLine;
-
 	private Boolean charging;
-
 	private Boolean discharging;
-
 	private CapacityUnits capacityUnits;
-
 	private Integer currentCapacity;
-
 	private Integer maxCapacity;
-
 	private Integer designCapacity;
-
 	private Integer cycleCount;
-
 	private String chemistry;
-
 	private LocalDate manufactureDate;
-
 	private String manufacturer;
-
 	private String serialNumber;
-
 	private Double temperature;
 
 	public String getName() {
