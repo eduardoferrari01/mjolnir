@@ -1,9 +1,13 @@
 package br.com.app.test.builder;
 
+import static org.mockito.Mockito.when;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import br.com.app.domain.ColetaResultado;
@@ -14,6 +18,8 @@ public class ColetaResultadoTestDataBuilderTest {
 
 	private static String JSON = "";
 	private static String ID_Default = "4aa6c0e7255c3b89987960d9097b40448079b48e0b51aa3160c486b2da7ff1cd";
+	@Mock
+	private ColetaResultadoTestDataBuilder testDataBuilder;
 	
 	@BeforeAll
 	public static void setup() {
@@ -41,6 +47,14 @@ public class ColetaResultadoTestDataBuilderTest {
 		Assertions.assertNotNull(coletaResultado);
 		Assertions.assertEquals(ID_CUSTOM, coletaResultado.getId());
 		Assertions.assertEquals(JSON, coletaResultado.getJson());
+	}
+	
+	@Test
+	public void deveConstruirColetaResultadoComString(){
+		
+		String coletaResultado = new ColetaResultadoTestDataBuilder().setJson(JSON).builderForJson();
+		Assertions.assertNotNull(coletaResultado);
+		Assertions.assertFalse(coletaResultado.isEmpty());
 	}
 	
 }

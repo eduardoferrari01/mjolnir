@@ -1,6 +1,10 @@
 package br.com.app.test.builder;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import br.com.app.domain.ColetaResultado;
+import br.com.app.util.ObjectMapperCustomized;
 
 public class ColetaResultadoTestDataBuilder {
 
@@ -16,6 +20,18 @@ public class ColetaResultadoTestDataBuilder {
 		
 		this.json = json;
 		return this;
+	}
+	
+	public String builderForJson()  {
+		
+		try {
+			ColetaResultado coletaResultado = builder();
+			ObjectMapper objectMapper = new ObjectMapperCustomized().create();
+			return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(coletaResultado);
+		} catch (JsonProcessingException e) {
+			
+			return "";
+		}
 	}
 	
 	public ColetaResultado builder() {
@@ -35,4 +51,5 @@ public class ColetaResultadoTestDataBuilder {
 		
 		return coletaResultado;
 	}
+	
 }
