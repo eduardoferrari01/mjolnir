@@ -1,5 +1,5 @@
 {
   "cpuTemperature" : 47.0,
-  "fanSpeeds" : [ 50, 10],
+  "fanSpeeds" : [ 50, 10 ],
   "cpuVoltage" : 0.0
 } 
