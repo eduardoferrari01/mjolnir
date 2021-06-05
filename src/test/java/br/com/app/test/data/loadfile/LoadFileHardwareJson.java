@@ -38,6 +38,10 @@ public class LoadFileHardwareJson extends LoadFileJsonAbstract{
 		return readFile("sensor.json");
 	}
 	
+	public String loadHardwareInformation() {
+		return readFile("hardwareInformation.json");
+	}
+	
 	@Override
 	protected String getPath() {
 		return "src/test/resources/";

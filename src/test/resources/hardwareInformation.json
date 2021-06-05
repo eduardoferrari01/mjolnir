@@ -1,0 +1,24 @@
+{
+    "manufacturer": "System manufacturer",
+    "model": "System Product Name (version: System Version)",
+    "serialNumber": "unknown",
+    "firmwareManufacturer": "unknown",
+    "firmwareName": "unknown",
+    "firmwareDescription": "Systemmanufacturer:pnSystemProductName:pvrSystemVersion:rvnASUSTeKCOMPUTERINC",
+    "firmwareVersion": "4307",
+    "firmwareReleaseDate": "2013-05-13",
+    "baseboardManufacturer": "ASUSTeK COMPUTER INC.",
+    "baseboardModel": "P8H61-M LE/BR",
+    "baseboardVersion": "Rev x.0x",
+    "baseboardSerialNumber": "unknown",
+    "processorName": "Intel(R) Core(TM) i5-2400 CPU @ 3.10GHz",
+    "processorIdentifier": "Intel64 Family 6 Model 42 Stepping 7",
+    "processorID": "A7C1FBFF002006A7",
+    "processorMicroarchitecture": "Sandy Bridge (Client)",
+    "processorPhysicalPackageCount": 1,
+    "processorPhysicalProcessorCount": 4,
+    "processorLogicalProcessorCount": 4,
+    "displays": [
+        "displays 1"
+    ]
+} 
