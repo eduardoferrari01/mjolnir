@@ -38,4 +38,8 @@ public class LoadFileOSJson extends LoadFileJsonAbstract{
 	public String loadOSVersionInfo() {
 		return readFile("osVersionInfo.json");
 	}
+	
+	public String loadOsInformation() {
+		return readFile("osInformation.json");
+	}
 }
